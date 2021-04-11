@@ -11,33 +11,107 @@ namespace fichePersonnage
     {
         // Attributs
         private string backGround;
+        private string préposition;
+        private ClasseIni fichierIniPays = new ClasseIni(@"\fichePersonnage\fichiersIni\pays.ini");
         private List<string> listBackGround = new List<string>();
 
         // Constructeur
         public BackGround(string backGround)
         {
             this.BackGroundPersonnage = backGround;
+            this.Préposition = préposition;
         }
 
         // Accesseur/Mutateur
         public string BackGroundPersonnage { get => backGround; set => backGround = value; }
+        public string Préposition { get => préposition; set => préposition = value; }
+
+        public string PaysAleatoire(List<string> listPays)
+        {
+            bool play = true;
+            Random nbAleatoire = new Random();
+            int i = 1;
+            string fmt = "000.##";
+            string paysRetourner;
+
+            while (play)
+            {
+                string repertoireALire = fichierIniPays.LireIni("PAYS", "NBPays" + i.ToString(fmt));
+                string nouveauPays = repertoireALire;
+                listPays.Add(nouveauPays);
+                i++;
+
+                if (repertoireALire == null)
+                {
+                    play = false;
+                }
+            }
+
+            int nbRandom = nbAleatoire.Next((listPays.Count));
+            paysRetourner = listPays[nbRandom];
+            return paysRetourner;
+        }
+
+        public string RecherchePreposition(List<string> listDesPays, string preposition)
+        {
+            List<string> voyelles = new List<string> { "A", "E", "I", "O", "U", "Y" };
+            List<string> consonnes = new List<string> { "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z" };
+            bool premiereLettreVoyelle = false;
+            bool derniereLettreVoyelle = false;
+            bool premiereLettreConsonne = false;
+            bool derniereLettreConsonne = false;
+            string paysChoisisAleatoirement = PaysAleatoire(listDesPays);
+            int indexDerniereLettre = Convert.ToInt32(paysChoisisAleatoirement.Length) - 1;
+            string premiereLettre = paysChoisisAleatoirement.Substring(0);
+            string derniereLettre = paysChoisisAleatoirement.Substring(indexDerniereLettre);
+            string premiereLettreTrouvee;
+            string dernierLettreTrouvee;
+
+            for (int i = 0; i < voyelles.Count; i++)
+            {
+                if (listDesPays[i] == premiereLettre)
+                {
+                    premiereLettreTrouvee = listDesPays[i];
+                    premiereLettreVoyelle = true;
+                }
+                else if (listDesPays[i] == derniereLettre)
+                {
+                    dernierLettreTrouvee = listDesPays[i].ToLower();
+                    derniereLettreVoyelle = true;
+                }
+            }
+
+            for (int j = 0; j < consonnes.Count; j++)
+            {
+                if (listDesPays[j] == premiereLettre)
+                {
+                    premiereLettreTrouvee = listDesPays[j];
+                    premiereLettreConsonne = true;
+                }
+                else if (listDesPays[j] == derniereLettre)
+                {
+                    dernierLettreTrouvee = listDesPays[j].ToLower();
+                    derniereLettreConsonne = true;
+                }
+            }
+
+            if (premiereLettreVoyelle && derniereLettreVoyelle)
+            {
+                preposition = "d'";
+            }
+
+            if(!premiereLettreVoyelle && derniereLettreVoyelle)
+            {
+                preposition = "de";
+            }
+        }
 
         public void GenererBackGroundGarcon(RichTextBox laRichTexBox, TextBox unBackGroundPrenom, TextBox unBackGroundNom)
         {
             Random nbRandom = new Random();
-            string bgUn = $"{unBackGroundPrenom.Text} est issu d'une famille de prolo, dernier héritier de la maison {unBackGroundNom.Text}, il est toutefois désemparé devant une femme. " +
-                $"Toutefois, il travaille sur ce point et a décidé de commencer à go muscu, pour honorer la mémoire de ses ancêtres, la plupart sont morts dans des guerres. " +
-                $"Malheureusement ses muscles ne se sont pas assez développés pour l'aventure qu'il va endurer, mais ses réflexes hors du commun qui s'activent seulement lorsqu'il est " +
-                $"réellement en danger peuvent l'aider quand même. A part les femoïdes, {unBackGroundPrenom.Text} s'en sort assez bien avec les relations sociales, en faisant une " +
-                $"personne presque normale.";
-            string bgDeux = $"Élevé dans une famille pauvre, {unBackGroundPrenom.Text} finit par décrocher son diplôme et rentrer dans une école de cinéma. Débutant avec des stages dans de petites productions, " +
-                "il s'est fait une petite renommée dans le milieu cinématographique.";
-
-            listBackGround.Add(bgUn);
-            listBackGround.Add(bgDeux);
+            string backgroundHomme = $"{unBackGroundPrenom} est un jeune homme originaire de ";
 
             int nbAleatoire = nbRandom.Next((listBackGround.Count));
-
             laRichTexBox.Text = listBackGround[nbAleatoire];
         }
     }

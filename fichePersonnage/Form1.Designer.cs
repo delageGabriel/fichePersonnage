@@ -225,6 +225,7 @@
             this.txtPointsRepartition.Name = "txtPointsRepartition";
             this.txtPointsRepartition.Size = new System.Drawing.Size(100, 20);
             this.txtPointsRepartition.TabIndex = 15;
+            this.txtPointsRepartition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPointsRepartition_KeyPress);
             // 
             // lblPhysique
             // 
@@ -259,6 +260,8 @@
             this.txtPhysique.Name = "txtPhysique";
             this.txtPhysique.Size = new System.Drawing.Size(100, 20);
             this.txtPhysique.TabIndex = 19;
+            this.txtPhysique.TextChanged += new System.EventHandler(this.txtPhysique_TextChanged);
+            this.txtPhysique.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhysique_KeyPress);
             // 
             // txtSocial
             // 
@@ -266,6 +269,8 @@
             this.txtSocial.Name = "txtSocial";
             this.txtSocial.Size = new System.Drawing.Size(100, 20);
             this.txtSocial.TabIndex = 20;
+            this.txtSocial.TextChanged += new System.EventHandler(this.txtSocial_TextChanged);
+            this.txtSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSocial_KeyPress);
             // 
             // txtMental
             // 
@@ -273,6 +278,8 @@
             this.txtMental.Name = "txtMental";
             this.txtMental.Size = new System.Drawing.Size(100, 20);
             this.txtMental.TabIndex = 21;
+            this.txtMental.TextChanged += new System.EventHandler(this.txtMental_TextChanged);
+            this.txtMental.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMental_KeyPress);
             // 
             // rdbAutre
             // 
@@ -363,6 +370,8 @@
             this.txtForce.Name = "txtForce";
             this.txtForce.Size = new System.Drawing.Size(75, 20);
             this.txtForce.TabIndex = 31;
+            this.txtForce.TextChanged += new System.EventHandler(this.txtForce_TextChanged);
+            this.txtForce.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtForce_KeyPress);
             // 
             // txtPerception
             // 
@@ -370,6 +379,7 @@
             this.txtPerception.Name = "txtPerception";
             this.txtPerception.Size = new System.Drawing.Size(77, 20);
             this.txtPerception.TabIndex = 32;
+            this.txtPerception.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerception_KeyPress);
             // 
             // txtConstitution
             // 
@@ -377,6 +387,7 @@
             this.txtConstitution.Name = "txtConstitution";
             this.txtConstitution.Size = new System.Drawing.Size(84, 20);
             this.txtConstitution.TabIndex = 33;
+            this.txtConstitution.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConstitution_KeyPress);
             // 
             // txtCharisme
             // 
@@ -384,6 +395,7 @@
             this.txtCharisme.Name = "txtCharisme";
             this.txtCharisme.Size = new System.Drawing.Size(79, 20);
             this.txtCharisme.TabIndex = 34;
+            this.txtCharisme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCharisme_KeyPress);
             // 
             // txtIntelligence
             // 
@@ -391,6 +403,7 @@
             this.txtIntelligence.Name = "txtIntelligence";
             this.txtIntelligence.Size = new System.Drawing.Size(84, 20);
             this.txtIntelligence.TabIndex = 35;
+            this.txtIntelligence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntelligence_KeyPress);
             // 
             // txtDexterite
             // 
@@ -398,6 +411,7 @@
             this.txtDexterite.Name = "txtDexterite";
             this.txtDexterite.Size = new System.Drawing.Size(75, 20);
             this.txtDexterite.TabIndex = 36;
+            this.txtDexterite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDexterite_KeyPress);
             // 
             // txtResistance
             // 
@@ -405,6 +419,8 @@
             this.txtResistance.Name = "txtResistance";
             this.txtResistance.Size = new System.Drawing.Size(87, 20);
             this.txtResistance.TabIndex = 37;
+            this.txtResistance.TextChanged += new System.EventHandler(this.txtResistance_TextChanged);
+            this.txtResistance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResistance_KeyPress);
             // 
             // lblAttributs
             // 

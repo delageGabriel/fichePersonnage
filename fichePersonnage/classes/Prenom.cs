@@ -36,6 +36,7 @@ namespace fichePersonnage
                 string nouveauPrenom = repertoireALire;
                 listPrenom.Add(nouveauPrenom);
                 i++;
+
                 if(repertoireALire == null)
                 {
                     play = false;
