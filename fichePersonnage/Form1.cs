@@ -81,7 +81,7 @@ namespace fichePersonnage
 
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }
