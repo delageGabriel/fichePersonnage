@@ -12,7 +12,7 @@ namespace fichePersonnage
         // Attributs
         private string backGround;
         private string préposition;
-        private ClasseIni fichierIniPays = new ClasseIni(@"\fichePersonnage\fichiersIni\pays.ini");
+        private ClasseIni fichierIniPays = new ClasseIni(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\fichiersIni\pays.ini");
         private List<string> listBackGround = new List<string>();
 
         // Constructeur
@@ -58,61 +58,72 @@ namespace fichePersonnage
             List<string> consonnes = new List<string> { "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z" };
             bool premiereLettreVoyelle = false;
             bool derniereLettreVoyelle = false;
-            bool premiereLettreConsonne = false;
             bool derniereLettreConsonne = false;
             string paysChoisisAleatoirement = PaysAleatoire(listDesPays);
             int indexDerniereLettre = Convert.ToInt32(paysChoisisAleatoirement.Length) - 1;
             string premiereLettre = paysChoisisAleatoirement.Substring(0);
             string derniereLettre = paysChoisisAleatoirement.Substring(indexDerniereLettre);
-            string premiereLettreTrouvee;
-            string dernierLettreTrouvee;
+            string prepositionRetourne = "";
+            string premiereLettreTrouvee = "";
+            string dernierLettreTrouvee = "";
 
+            // Première lettre si voyelle
             for (int i = 0; i < voyelles.Count; i++)
             {
-                if (listDesPays[i] == premiereLettre)
+                if (voyelles[i] == premiereLettre)
                 {
-                    premiereLettreTrouvee = listDesPays[i];
+                    premiereLettreTrouvee = voyelles[i];
                     premiereLettreVoyelle = true;
                 }
-                else if (listDesPays[i] == derniereLettre)
+            }
+
+            // Dernière lettre si voyelle
+            for (int i = 0; i < voyelles.Count; i++)
+            {
+                if (voyelles[i] == derniereLettre)
                 {
-                    dernierLettreTrouvee = listDesPays[i].ToLower();
+                    dernierLettreTrouvee = voyelles[i].ToLower();
                     derniereLettreVoyelle = true;
                 }
             }
 
             for (int j = 0; j < consonnes.Count; j++)
             {
-                if (listDesPays[j] == premiereLettre)
+                if (consonnes[j] == derniereLettre)
                 {
-                    premiereLettreTrouvee = listDesPays[j];
-                    premiereLettreConsonne = true;
-                }
-                else if (listDesPays[j] == derniereLettre)
-                {
-                    dernierLettreTrouvee = listDesPays[j].ToLower();
+                    dernierLettreTrouvee = consonnes[j].ToLower();
                     derniereLettreConsonne = true;
                 }
             }
 
-            if (premiereLettreVoyelle && derniereLettreVoyelle)
+            if (premiereLettreVoyelle)
             {
                 preposition = "d'";
             }
-
-            if(!premiereLettreVoyelle && derniereLettreVoyelle)
+            else if(derniereLettreVoyelle)
             {
                 preposition = "de";
             }
+            else if(derniereLettreConsonne && dernierLettreTrouvee == "s")
+            {
+                preposition = "des";
+            }
+            else if(derniereLettreConsonne || paysChoisisAleatoirement == "Mexique" || paysChoisisAleatoirement == "Mozambique" || paysChoisisAleatoirement == "Cambodge")
+            {
+                preposition = "du";
+            }
+            prepositionRetourne = preposition;
+            return prepositionRetourne;
         }
 
         public void GenererBackGroundGarcon(RichTextBox laRichTexBox, TextBox unBackGroundPrenom, TextBox unBackGroundNom)
         {
-            Random nbRandom = new Random();
-            string backgroundHomme = $"{unBackGroundPrenom} est un jeune homme originaire de ";
-
-            int nbAleatoire = nbRandom.Next((listBackGround.Count));
-            laRichTexBox.Text = listBackGround[nbAleatoire];
+            List<string> listPaysBackground = new List<string>();
+            string paysChoisisAleatoirement = PaysAleatoire(listPaysBackground);
+            string preposition = "";
+            string article = RecherchePreposition(listPaysBackground, preposition);
+            string backgroundHomme = $"{unBackGroundPrenom} est un jeune homme originaire {article} {paysChoisisAleatoirement}";
+            laRichTexBox.Text = backgroundHomme;
         }
     }
 }
