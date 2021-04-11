@@ -14,6 +14,7 @@ namespace fichePersonnage
     {
         private Prenom unPrenom;
         private Nom unNom;
+        private BackGround unBackGround;
 
         public Form1()
         {
@@ -21,6 +22,7 @@ namespace fichePersonnage
 
             unPrenom = new Prenom("Isse");
             unNom = new Nom("La Chancla");
+            unBackGround = new BackGround("Ceci est un BackGround");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,6 +84,16 @@ namespace fichePersonnage
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
             //
+        }
+
+        private void btnGenerHistoire_Click(object sender, EventArgs e)
+        {
+            unBackGround.GenererBackGroundGarcon(rtbHistoire, txtPrenom, txtNom);
+        }
+
+        private void rtbHistoire_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

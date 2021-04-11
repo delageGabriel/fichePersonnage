@@ -71,6 +71,7 @@
             this.lblCompetences = new System.Windows.Forms.Label();
             this.btnAjoutCompetences = new System.Windows.Forms.Button();
             this.lblSize = new System.Windows.Forms.Label();
+            this.lblLimiteCaractere = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatarPerso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,10 +184,12 @@
             // rtbHistoire
             // 
             this.rtbHistoire.Location = new System.Drawing.Point(28, 270);
+            this.rtbHistoire.MaxLength = 500;
             this.rtbHistoire.Name = "rtbHistoire";
             this.rtbHistoire.Size = new System.Drawing.Size(505, 180);
             this.rtbHistoire.TabIndex = 11;
             this.rtbHistoire.Text = "";
+            this.rtbHistoire.TextChanged += new System.EventHandler(this.rtbHistoire_TextChanged);
             // 
             // lblHistoire
             // 
@@ -205,6 +208,7 @@
             this.btnGenerHistoire.TabIndex = 13;
             this.btnGenerHistoire.Text = "Générer Histoire";
             this.btnGenerHistoire.UseVisualStyleBackColor = true;
+            this.btnGenerHistoire.Click += new System.EventHandler(this.btnGenerHistoire_Click);
             // 
             // lblNbPoints
             // 
@@ -447,11 +451,21 @@
             this.lblSize.TabIndex = 42;
             this.lblSize.Text = "154 x 154";
             // 
+            // lblLimiteCaractere
+            // 
+            this.lblLimiteCaractere.AutoSize = true;
+            this.lblLimiteCaractere.Location = new System.Drawing.Point(49, 456);
+            this.lblLimiteCaractere.Name = "lblLimiteCaractere";
+            this.lblLimiteCaractere.Size = new System.Drawing.Size(125, 13);
+            this.lblLimiteCaractere.TabIndex = 43;
+            this.lblLimiteCaractere.Text = "Maximum 500 caractères";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 835);
+            this.Controls.Add(this.lblLimiteCaractere);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.btnAjoutCompetences);
             this.Controls.Add(this.lblCompetences);
@@ -549,6 +563,7 @@
         private System.Windows.Forms.Label lblCompetences;
         private System.Windows.Forms.Button btnAjoutCompetences;
         private System.Windows.Forms.Label lblSize;
+        private System.Windows.Forms.Label lblLimiteCaractere;
     }
 }
 
