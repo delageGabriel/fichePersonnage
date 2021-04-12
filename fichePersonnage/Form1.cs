@@ -15,7 +15,6 @@ namespace fichePersonnage
         private Prenom unPrenom;
         private Nom unNom;
         private BackGround unBackGround;
-        private Caractéristiques uneCaractéristique;
 
         public Form1()
         {
@@ -24,7 +23,6 @@ namespace fichePersonnage
             unPrenom = new Prenom("Isse");
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
-            uneCaractéristique = new Caractéristiques(150);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -107,9 +105,7 @@ namespace fichePersonnage
 
         private void txtPointsRepartition_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
-
-            if (!char.IsDigit(ch) && ch != 8)
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
             {
                 e.Handled = true;
             }
@@ -117,7 +113,7 @@ namespace fichePersonnage
 
         private void txtPhysique_TextChanged(object sender, EventArgs e)
         {
-            uneCaractéristique.checkRepartitionsPointsPhysique(txtPhysique, txtPointsRepartition);
+
         }
 
         private void txtSocial_TextChanged(object sender, EventArgs e)
@@ -137,9 +133,7 @@ namespace fichePersonnage
 
         private void txtPhysique_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
-
-            if (!char.IsDigit(ch) && ch != 8)
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
             {
                 e.Handled = true;
             }
@@ -237,6 +231,47 @@ namespace fichePersonnage
             if (!char.IsDigit(ch) && ch != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtPointsRepartition_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbModeAventures_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbModeAventures.Checked == true)
+            {
+                txtPhysique.Enabled = true;
+                txtSocial.Enabled = true;
+                txtMental.Enabled = true;
+                txtForce.Enabled = false;
+                txtPerception.Enabled = false;
+                txtConstitution.Enabled = false;
+                txtCharisme.Enabled = false;
+                txtIntelligence.Enabled = false;
+                txtDexterite.Enabled = false;
+                txtResistance.Enabled = false;
+                btnGenerPrenom.Enabled = false;
+            }
+        }
+
+        private void rdbNoeliste_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbNoeliste.Checked == true)
+            {
+                txtForce.Enabled = true;
+                txtPerception.Enabled = true;
+                txtConstitution.Enabled = true;
+                txtCharisme.Enabled = true;
+                txtIntelligence.Enabled = true;
+                txtDexterite.Enabled = true;
+                txtResistance.Enabled = true;
+                txtPhysique.Enabled = false;
+                txtSocial.Enabled = false;
+                txtMental.Enabled = false;
+                btnGenerPrenom.Enabled = false;
             }
         }
     }

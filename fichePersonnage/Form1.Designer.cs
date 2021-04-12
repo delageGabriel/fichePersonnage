@@ -42,8 +42,6 @@
             this.rtbHistoire = new System.Windows.Forms.RichTextBox();
             this.lblHistoire = new System.Windows.Forms.Label();
             this.btnGenerHistoire = new System.Windows.Forms.Button();
-            this.lblNbPoints = new System.Windows.Forms.Label();
-            this.txtPointsRepartition = new System.Windows.Forms.TextBox();
             this.lblPhysique = new System.Windows.Forms.Label();
             this.lblSocial = new System.Windows.Forms.Label();
             this.lblMental = new System.Windows.Forms.Label();
@@ -72,6 +70,10 @@
             this.btnAjoutCompetences = new System.Windows.Forms.Button();
             this.lblSize = new System.Windows.Forms.Label();
             this.lblLimiteCaractere = new System.Windows.Forms.Label();
+            this.lblAventures = new System.Windows.Forms.Label();
+            this.rdbModeAventures = new System.Windows.Forms.RadioButton();
+            this.lblModeNoeliste = new System.Windows.Forms.Label();
+            this.rdbNoeliste = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatarPerso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,27 +212,10 @@
             this.btnGenerHistoire.UseVisualStyleBackColor = true;
             this.btnGenerHistoire.Click += new System.EventHandler(this.btnGenerHistoire_Click);
             // 
-            // lblNbPoints
-            // 
-            this.lblNbPoints.AutoSize = true;
-            this.lblNbPoints.Location = new System.Drawing.Point(24, 505);
-            this.lblNbPoints.Name = "lblNbPoints";
-            this.lblNbPoints.Size = new System.Drawing.Size(217, 13);
-            this.lblNbPoints.TabIndex = 14;
-            this.lblNbPoints.Text = "Nombre de points caractéristiques à répartir :";
-            // 
-            // txtPointsRepartition
-            // 
-            this.txtPointsRepartition.Location = new System.Drawing.Point(247, 502);
-            this.txtPointsRepartition.Name = "txtPointsRepartition";
-            this.txtPointsRepartition.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsRepartition.TabIndex = 15;
-            this.txtPointsRepartition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPointsRepartition_KeyPress);
-            // 
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(89, 576);
+            this.lblPhysique.Location = new System.Drawing.Point(80, 537);
             this.lblPhysique.Name = "lblPhysique";
             this.lblPhysique.Size = new System.Drawing.Size(50, 13);
             this.lblPhysique.TabIndex = 16;
@@ -239,7 +224,7 @@
             // lblSocial
             // 
             this.lblSocial.AutoSize = true;
-            this.lblSocial.Location = new System.Drawing.Point(274, 575);
+            this.lblSocial.Location = new System.Drawing.Point(265, 536);
             this.lblSocial.Name = "lblSocial";
             this.lblSocial.Size = new System.Drawing.Size(36, 13);
             this.lblSocial.TabIndex = 17;
@@ -248,7 +233,7 @@
             // lblMental
             // 
             this.lblMental.AutoSize = true;
-            this.lblMental.Location = new System.Drawing.Point(447, 574);
+            this.lblMental.Location = new System.Drawing.Point(438, 535);
             this.lblMental.Name = "lblMental";
             this.lblMental.Size = new System.Drawing.Size(39, 13);
             this.lblMental.TabIndex = 18;
@@ -256,7 +241,8 @@
             // 
             // txtPhysique
             // 
-            this.txtPhysique.Location = new System.Drawing.Point(61, 592);
+            this.txtPhysique.Enabled = false;
+            this.txtPhysique.Location = new System.Drawing.Point(52, 553);
             this.txtPhysique.Name = "txtPhysique";
             this.txtPhysique.Size = new System.Drawing.Size(100, 20);
             this.txtPhysique.TabIndex = 19;
@@ -265,7 +251,8 @@
             // 
             // txtSocial
             // 
-            this.txtSocial.Location = new System.Drawing.Point(242, 592);
+            this.txtSocial.Enabled = false;
+            this.txtSocial.Location = new System.Drawing.Point(233, 553);
             this.txtSocial.Name = "txtSocial";
             this.txtSocial.Size = new System.Drawing.Size(100, 20);
             this.txtSocial.TabIndex = 20;
@@ -274,7 +261,8 @@
             // 
             // txtMental
             // 
-            this.txtMental.Location = new System.Drawing.Point(414, 592);
+            this.txtMental.Enabled = false;
+            this.txtMental.Location = new System.Drawing.Point(405, 553);
             this.txtMental.Name = "txtMental";
             this.txtMental.Size = new System.Drawing.Size(100, 20);
             this.txtMental.TabIndex = 21;
@@ -304,7 +292,7 @@
             // lblForce
             // 
             this.lblForce.AutoSize = true;
-            this.lblForce.Location = new System.Drawing.Point(46, 632);
+            this.lblForce.Location = new System.Drawing.Point(37, 593);
             this.lblForce.Name = "lblForce";
             this.lblForce.Size = new System.Drawing.Size(34, 13);
             this.lblForce.TabIndex = 24;
@@ -313,7 +301,7 @@
             // lblPerception
             // 
             this.lblPerception.AutoSize = true;
-            this.lblPerception.Location = new System.Drawing.Point(103, 632);
+            this.lblPerception.Location = new System.Drawing.Point(94, 593);
             this.lblPerception.Name = "lblPerception";
             this.lblPerception.Size = new System.Drawing.Size(58, 13);
             this.lblPerception.TabIndex = 25;
@@ -322,7 +310,7 @@
             // lblConstitution
             // 
             this.lblConstitution.AutoSize = true;
-            this.lblConstitution.Location = new System.Drawing.Point(179, 632);
+            this.lblConstitution.Location = new System.Drawing.Point(170, 593);
             this.lblConstitution.Name = "lblConstitution";
             this.lblConstitution.Size = new System.Drawing.Size(62, 13);
             this.lblConstitution.TabIndex = 26;
@@ -331,7 +319,7 @@
             // lblCharisme
             // 
             this.lblCharisme.AutoSize = true;
-            this.lblCharisme.Location = new System.Drawing.Point(260, 632);
+            this.lblCharisme.Location = new System.Drawing.Point(251, 593);
             this.lblCharisme.Name = "lblCharisme";
             this.lblCharisme.Size = new System.Drawing.Size(50, 13);
             this.lblCharisme.TabIndex = 27;
@@ -340,7 +328,7 @@
             // lblIntelligence
             // 
             this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Location = new System.Drawing.Point(333, 632);
+            this.lblIntelligence.Location = new System.Drawing.Point(324, 593);
             this.lblIntelligence.Name = "lblIntelligence";
             this.lblIntelligence.Size = new System.Drawing.Size(61, 13);
             this.lblIntelligence.TabIndex = 28;
@@ -349,7 +337,7 @@
             // lblDexterite
             // 
             this.lblDexterite.AutoSize = true;
-            this.lblDexterite.Location = new System.Drawing.Point(411, 632);
+            this.lblDexterite.Location = new System.Drawing.Point(402, 593);
             this.lblDexterite.Name = "lblDexterite";
             this.lblDexterite.Size = new System.Drawing.Size(49, 13);
             this.lblDexterite.TabIndex = 29;
@@ -358,7 +346,7 @@
             // lblResistance
             // 
             this.lblResistance.AutoSize = true;
-            this.lblResistance.Location = new System.Drawing.Point(481, 632);
+            this.lblResistance.Location = new System.Drawing.Point(472, 593);
             this.lblResistance.Name = "lblResistance";
             this.lblResistance.Size = new System.Drawing.Size(60, 13);
             this.lblResistance.TabIndex = 30;
@@ -366,7 +354,8 @@
             // 
             // txtForce
             // 
-            this.txtForce.Location = new System.Drawing.Point(20, 648);
+            this.txtForce.Enabled = false;
+            this.txtForce.Location = new System.Drawing.Point(11, 609);
             this.txtForce.Name = "txtForce";
             this.txtForce.Size = new System.Drawing.Size(75, 20);
             this.txtForce.TabIndex = 31;
@@ -375,7 +364,8 @@
             // 
             // txtPerception
             // 
-            this.txtPerception.Location = new System.Drawing.Point(92, 648);
+            this.txtPerception.Enabled = false;
+            this.txtPerception.Location = new System.Drawing.Point(83, 609);
             this.txtPerception.Name = "txtPerception";
             this.txtPerception.Size = new System.Drawing.Size(77, 20);
             this.txtPerception.TabIndex = 32;
@@ -383,7 +373,8 @@
             // 
             // txtConstitution
             // 
-            this.txtConstitution.Location = new System.Drawing.Point(166, 648);
+            this.txtConstitution.Enabled = false;
+            this.txtConstitution.Location = new System.Drawing.Point(157, 609);
             this.txtConstitution.Name = "txtConstitution";
             this.txtConstitution.Size = new System.Drawing.Size(84, 20);
             this.txtConstitution.TabIndex = 33;
@@ -391,7 +382,8 @@
             // 
             // txtCharisme
             // 
-            this.txtCharisme.Location = new System.Drawing.Point(242, 648);
+            this.txtCharisme.Enabled = false;
+            this.txtCharisme.Location = new System.Drawing.Point(233, 609);
             this.txtCharisme.Name = "txtCharisme";
             this.txtCharisme.Size = new System.Drawing.Size(79, 20);
             this.txtCharisme.TabIndex = 34;
@@ -399,7 +391,8 @@
             // 
             // txtIntelligence
             // 
-            this.txtIntelligence.Location = new System.Drawing.Point(320, 648);
+            this.txtIntelligence.Enabled = false;
+            this.txtIntelligence.Location = new System.Drawing.Point(311, 609);
             this.txtIntelligence.Name = "txtIntelligence";
             this.txtIntelligence.Size = new System.Drawing.Size(84, 20);
             this.txtIntelligence.TabIndex = 35;
@@ -407,7 +400,8 @@
             // 
             // txtDexterite
             // 
-            this.txtDexterite.Location = new System.Drawing.Point(400, 648);
+            this.txtDexterite.Enabled = false;
+            this.txtDexterite.Location = new System.Drawing.Point(391, 609);
             this.txtDexterite.Name = "txtDexterite";
             this.txtDexterite.Size = new System.Drawing.Size(75, 20);
             this.txtDexterite.TabIndex = 36;
@@ -415,7 +409,8 @@
             // 
             // txtResistance
             // 
-            this.txtResistance.Location = new System.Drawing.Point(471, 648);
+            this.txtResistance.Enabled = false;
+            this.txtResistance.Location = new System.Drawing.Point(462, 609);
             this.txtResistance.Name = "txtResistance";
             this.txtResistance.Size = new System.Drawing.Size(87, 20);
             this.txtResistance.TabIndex = 37;
@@ -476,11 +471,55 @@
             this.lblLimiteCaractere.TabIndex = 43;
             this.lblLimiteCaractere.Text = "Maximum 500 caractères";
             // 
+            // lblAventures
+            // 
+            this.lblAventures.AutoSize = true;
+            this.lblAventures.Location = new System.Drawing.Point(116, 509);
+            this.lblAventures.Name = "lblAventures";
+            this.lblAventures.Size = new System.Drawing.Size(85, 13);
+            this.lblAventures.TabIndex = 44;
+            this.lblAventures.Text = "Mode Aventures";
+            // 
+            // rdbModeAventures
+            // 
+            this.rdbModeAventures.AutoSize = true;
+            this.rdbModeAventures.Location = new System.Drawing.Point(207, 509);
+            this.rdbModeAventures.Name = "rdbModeAventures";
+            this.rdbModeAventures.Size = new System.Drawing.Size(14, 13);
+            this.rdbModeAventures.TabIndex = 45;
+            this.rdbModeAventures.TabStop = true;
+            this.rdbModeAventures.UseVisualStyleBackColor = true;
+            this.rdbModeAventures.CheckedChanged += new System.EventHandler(this.rdbModeAventures_CheckedChanged);
+            // 
+            // lblModeNoeliste
+            // 
+            this.lblModeNoeliste.AutoSize = true;
+            this.lblModeNoeliste.Location = new System.Drawing.Point(308, 509);
+            this.lblModeNoeliste.Name = "lblModeNoeliste";
+            this.lblModeNoeliste.Size = new System.Drawing.Size(75, 13);
+            this.lblModeNoeliste.TabIndex = 46;
+            this.lblModeNoeliste.Text = "Mode Noeliste";
+            // 
+            // rdbNoeliste
+            // 
+            this.rdbNoeliste.AutoSize = true;
+            this.rdbNoeliste.Location = new System.Drawing.Point(389, 509);
+            this.rdbNoeliste.Name = "rdbNoeliste";
+            this.rdbNoeliste.Size = new System.Drawing.Size(14, 13);
+            this.rdbNoeliste.TabIndex = 47;
+            this.rdbNoeliste.TabStop = true;
+            this.rdbNoeliste.UseVisualStyleBackColor = true;
+            this.rdbNoeliste.CheckedChanged += new System.EventHandler(this.rdbNoeliste_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 835);
+            this.Controls.Add(this.rdbNoeliste);
+            this.Controls.Add(this.lblModeNoeliste);
+            this.Controls.Add(this.rdbModeAventures);
+            this.Controls.Add(this.lblAventures);
             this.Controls.Add(this.lblLimiteCaractere);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.btnAjoutCompetences);
@@ -509,8 +548,6 @@
             this.Controls.Add(this.lblMental);
             this.Controls.Add(this.lblSocial);
             this.Controls.Add(this.lblPhysique);
-            this.Controls.Add(this.txtPointsRepartition);
-            this.Controls.Add(this.lblNbPoints);
             this.Controls.Add(this.btnGenerHistoire);
             this.Controls.Add(this.lblHistoire);
             this.Controls.Add(this.rtbHistoire);
@@ -550,8 +587,6 @@
         private System.Windows.Forms.RichTextBox rtbHistoire;
         private System.Windows.Forms.Label lblHistoire;
         private System.Windows.Forms.Button btnGenerHistoire;
-        private System.Windows.Forms.Label lblNbPoints;
-        private System.Windows.Forms.TextBox txtPointsRepartition;
         private System.Windows.Forms.Label lblPhysique;
         private System.Windows.Forms.Label lblSocial;
         private System.Windows.Forms.Label lblMental;
@@ -580,6 +615,10 @@
         private System.Windows.Forms.Button btnAjoutCompetences;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblLimiteCaractere;
+        private System.Windows.Forms.Label lblAventures;
+        private System.Windows.Forms.RadioButton rdbModeAventures;
+        private System.Windows.Forms.Label lblModeNoeliste;
+        private System.Windows.Forms.RadioButton rdbNoeliste;
     }
 }
 
