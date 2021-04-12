@@ -90,7 +90,14 @@ namespace fichePersonnage
 
         private void btnGenerHistoire_Click(object sender, EventArgs e)
         {
-            unBackGround.GenererBackGroundGarcon(rtbHistoire, txtPrenom, txtNom);
+            if (rdbHomme.Checked == true)
+            {
+                unBackGround.GenererBackGroundGarcon(rtbHistoire, txtPrenom, txtNom); 
+            }
+            else if (rdbFemme.Checked == true)
+            {
+                unBackGround.GenererBackGroundFille(rtbHistoire, txtPrenom, txtNom);
+            }
         }
 
         private void rtbHistoire_TextChanged(object sender, EventArgs e)

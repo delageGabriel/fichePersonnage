@@ -13,7 +13,6 @@ namespace fichePersonnage
         private string backGround;
         private string préposition;
         private ClasseIni fichierIniPays = new ClasseIni(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\fichiersIni\pays.ini");
-        private ClasseIni fichierIniPassionAvenir = new ClasseIni(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\fichiersIni\passions.ini");
         private List<string> listBackGround = new List<string>();
 
         // Constructeur
@@ -67,7 +66,7 @@ namespace fichePersonnage
             }
 
             int nbRandom = nbAleatoire.Next((listDesPays.Count));
-            paysChoisisAleatoirement = listDesPays[nbRandom];
+            paysChoisisAleatoirement = listDesPays[nbRandom].Trim();
             indexDerniereLettre = Convert.ToInt32(paysChoisisAleatoirement.Length) - 1;
             premiereLettre = paysChoisisAleatoirement.Substring(0, 1);
             derniereLettre = paysChoisisAleatoirement.Substring(indexDerniereLettre);
@@ -145,12 +144,18 @@ namespace fichePersonnage
             return prepositionPlusPaysRetourne;
         }
 
-        public string PassionEtAvenireAleatoire(List<string> listDesPassions, List<string> listAvenir, string passion, string avenir)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listDesPassions"></param>
+        /// <param name="listAvenir"></param>
+        /// <param name="passion"></param>
+        /// <param name="avenir"></param>
+        /// <returns></returns>
+        public string PassionEtAvenirAleatoireGarcon(List<string> listDesPassions, List<string> listAvenir, string passion, string avenir)
         {
             Random nbAleatoirePassion = new Random();
             Random nbAleatoireAvenir = new Random();
-            int i = 1;
-            int j = 1;
             string phraseFinale = "";
 
             listDesPassions.Add("l'informatique");
@@ -175,7 +180,7 @@ namespace fichePersonnage
 
             listAvenir.Add("mais il ne réussit pas et se contenta de faire un simple métier à sa portée.");
             listAvenir.Add("il parvint à arriver à son objectif et il fait désormais un travail dans sa passion.");
-            listAvenir.Add("il y parvint, mais la désillusion s'effaça pour laisser place à un ennui mortel au boulot.");
+            listAvenir.Add("il y parvint, mais le rêve s'effaça pour laisser place à un ennui mortel au boulot.");
             listAvenir.Add("il ne réussit pas et pire encore, il fut pendant un temps SDF avant de se reprendre en main.");
             listAvenir.Add("il y parvint, et fait du bénévolat et des actions humanitaires à côté.");
 
@@ -183,9 +188,149 @@ namespace fichePersonnage
             avenir = listAvenir[nbRandomAvenir];
             listAvenir.Clear();
 
-            phraseFinale = passion + " " + avenir;
+            phraseFinale = passion + " " + "il fit des études pour faire carrière dans le domaine," + " " + avenir;
             return phraseFinale;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listDesPassions"></param>
+        /// <param name="listAvenir"></param>
+        /// <param name="passion"></param>
+        /// <param name="avenir"></param>
+        /// <returns></returns>
+        public string PassionEtAvenirAleatoireFille(List<string> listDesPassions, List<string> listAvenir, string passion, string avenir)
+        {
+            Random nbAleatoirePassion = new Random();
+            Random nbAleatoireAvenir = new Random();
+            string phraseFinale = "";
+
+            listDesPassions.Add("l'informatique");
+            listDesPassions.Add("les jeux vidéo");
+            listDesPassions.Add("la lecture");
+            listDesPassions.Add("la musique");
+            listDesPassions.Add("la peinture");
+            listDesPassions.Add("le dessin");
+            listDesPassions.Add("la photographie");
+            listDesPassions.Add("l'histoire");
+            listDesPassions.Add("la géographie");
+            listDesPassions.Add("les sciences");
+            listDesPassions.Add("la nature");
+            listDesPassions.Add("la lithographie");
+            listDesPassions.Add("les comics");
+            listDesPassions.Add("le sport");
+            listDesPassions.Add("les voitures");
+
+            int nbRandomPassion = nbAleatoirePassion.Next((listDesPassions.Count));
+            passion = listDesPassions[nbRandomPassion];
+            listDesPassions.Clear();
+
+            listAvenir.Add("mais elle ne réussit pas et se contenta de faire un simple métier à sa portée.");
+            listAvenir.Add("elle parvint à arriver à son objectif et elle fait désormais un travail dans sa passion.");
+            listAvenir.Add("elle y parvint, mais le rêve s'effaça pour laisser place à un ennui mortel au boulot.");
+            listAvenir.Add("elle ne réussit pas et pire encore, elle fut pendant un temps SDF avant de se reprendre en main.");
+            listAvenir.Add("elle y parvint, et fait du bénévolat et des actions humanitaires à côté.");
+
+            int nbRandomAvenir = nbAleatoireAvenir.Next((listAvenir.Count));
+            avenir = listAvenir[nbRandomAvenir];
+            listAvenir.Clear();
+
+            phraseFinale = passion + " " + "elle fit des études pour faire carrière dans le domaine," + " " + avenir;
+            return phraseFinale;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listPasse"></param>
+        /// <param name="passe"></param>
+        /// <returns></returns>
+        public string PasseSombreEtTortueuxAleatoireFille(List<string> listPasse, string passe)
+        {
+            Random nbAleatoire = new Random();
+            string passeFinale = "";
+            listPasse.Add("Plus jeune, elle fit une formation dans un couvent pour rester chaste et pure.");
+            listPasse.Add("Plus jeune, elle faisait déjà des petits boulots à côté des études pour aider sa famille pauvre.");
+            listPasse.Add("Plus jeune, elle faisait parti d'une association sportive où il y remporta quelques médailles dont elle est très fier.");
+            listPasse.Add("Plus jeune, elle se perdit en forêt, ce qui lui causa un traumatisme profond, depuis elle a peur de s'aventurer seul dans des endroits sans aucune présence");
+            listPasse.Add("Plus jeune, elle resta impassible devant un tigre qui rugit devant elle dans un zoo, elle est surnommée depuis Lily la tigresse");
+            listPasse.Add("Plus jeune, elle était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais elle réussit à se reprendre en main.");
+            listPasse.Add("Plus jeune, elle n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais elle surmonta ces harcélements.");
+
+            int nbRandomPasse = nbAleatoire.Next((listPasse.Count));
+            passe = listPasse[nbRandomPasse];
+            listPasse.Clear();
+            passeFinale = passe;
+            return passeFinale;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listPasse"></param>
+        /// <param name="passe"></param>
+        /// <returns></returns>
+        public string PasseSombreEtTortueuxAleatoireGarcon(List<string> listPasse, string passe)
+        {
+            Random nbAleatoire = new Random();
+            string passeFinale = "";
+            listPasse.Add("Plus jeune, il fit quelques bêtises qui lui valurent de passer du temps en prison où il s'y endurcit aussi bien mentalement que physiquement.");
+            listPasse.Add("Plus jeune, il faisait déjà des petits boulots à côté des études pour aider sa famille pauvre.");
+            listPasse.Add("Plus jeune, il faisait parti d'une association sportive où il y remporta quelques médailles dont il est très fier.");
+            listPasse.Add("Plus jeune, il se perdit en forêt, ce qui lui causa un traumatisme profond, depuis il a peur de s'aventurer seul dans des endroits sans aucune présence");
+            listPasse.Add("Plus jeune, il survécut à une rencontre avec sanglier qu'il battu à mains nues, parce que sans rigoler c'était pas plus compliqué qu'avec un couteau. Son surnom depuis est Pumba.");
+            listPasse.Add("Plus jeune, il était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais il réussit à se reprendre en main.");
+            listPasse.Add("Plus jeune, il n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais il surmonta ces harcélements.");
+
+            int nbRandomPasse = nbAleatoire.Next((listPasse.Count));
+            passe = listPasse[nbRandomPasse];
+            listPasse.Clear();
+            passeFinale = passe;
+            return passeFinale;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listDeCompagnons"></param>
+        /// <param name="unCompagnon"></param>
+        /// <returns></returns>
+        public string UnCompagnonAleatoireFille(List<string> listDeCompagnons, string unCompagnon)
+        {
+            Random nbAleatoire = new Random();
+            string compagnonFinal = "";
+            listDeCompagnons.Add("Elle est follement amoureuse du jeune Kévin le chad, et cherche à lui parler en secret.");
+            listDeCompagnons.Add("Elle sait qu'elle peut toujours compter sur sa meilleure ami Chouffine, qui l'aidera peu importe la situation.");
+            listDeCompagnons.Add("Elle sait qu'elle peut toujours faire appel à sa famille en cas de pépin.");
+
+            int nbRandomCompagnons = nbAleatoire.Next(listDeCompagnons.Count);
+            unCompagnon = listDeCompagnons[nbRandomCompagnons];
+            listDeCompagnons.Clear();
+            compagnonFinal = unCompagnon;
+            return compagnonFinal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listDeCompagnons"></param>
+        /// <param name="unCompagnon"></param>
+        /// <returns></returns>
+        public string UnCompagnonAleatoireGarcon(List<string> listDeCompagnons, string unCompagnon)
+        {
+            Random nbAleatoire = new Random();
+            string compagnonFinal = "";
+            listDeCompagnons.Add("Il est follement amoureux de la jeune Béatrice sa voisine, et serait prêt à tout pour l'épouser.");
+            listDeCompagnons.Add("Il sait qu'il peut toujours compter sur son meilleur ami Jean-René, qui l'aidera peu importe la situation.");
+            listDeCompagnons.Add("Il sait qu'il peut toujours faire appel à sa famille en cas de pépin.");
+
+            int nbRandomCompagnons = nbAleatoire.Next(listDeCompagnons.Count);
+            unCompagnon = listDeCompagnons[nbRandomCompagnons];
+            listDeCompagnons.Clear();
+            compagnonFinal = unCompagnon;
+            return compagnonFinal;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -197,17 +342,53 @@ namespace fichePersonnage
             List<string> listPaysBackground = new List<string>();
             List<string> listPassionsBackground = new List<string>();
             List<string> listAvenirBackground = new List<string>();
+            List<string> listPasseBackground = new List<string>();
+            List<string> listCompagnonBackground = new List<string>();
             string prenom = unBackGroundPrenom.Text;
             string nom = unBackGroundNom.Text;
+            string unPasse = "";
             string unePassion = "";
             string unAvenir = "";
-            string unePassionPlusUnAvenir = PassionEtAvenireAleatoire(listPassionsBackground, listAvenirBackground, unePassion, unAvenir);
+            string unCompagnon = "";
+            string unePassionPlusUnAvenir = PassionEtAvenirAleatoireGarcon(listPassionsBackground, listAvenirBackground, unePassion, unAvenir);
+            string unPasseSombre = PasseSombreEtTortueuxAleatoireGarcon(listPasseBackground, unPasse);
+            string compagnonUltime = UnCompagnonAleatoireGarcon(listCompagnonBackground, unCompagnon);
             string paysAleatoire = "";
             string preposition = "";
             string prepositionPlusPays = PaysEtPrepositionAleatoire(listPaysBackground, preposition, paysAleatoire);
             string backgroundHomme = $"{prenom} {nom} est un homme originaire {prepositionPlusPays} où il y a vécu toute son enfance. Depuis tout petit c'est un grand " +
-                $"passionné par {unePassionPlusUnAvenir} ";
+                $"passionné par {unePassionPlusUnAvenir} {unPasseSombre}. {compagnonUltime}";
             laRichTexBox.Text = backgroundHomme;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="laRichTexBox"></param>
+        /// <param name="unBackGroundPrenom"></param>
+        /// <param name="unBackGroundNom"></param>
+        public void GenererBackGroundFille(RichTextBox laRichTexBox, TextBox unBackGroundPrenom, TextBox unBackGroundNom)
+        {
+            List<string> listPaysBackground = new List<string>();
+            List<string> listPassionsBackground = new List<string>();
+            List<string> listAvenirBackground = new List<string>();
+            List<string> listPasseBackground = new List<string>();
+            List<string> listCompagnonBackground = new List<string>();
+            string prenom = unBackGroundPrenom.Text;
+            string nom = unBackGroundNom.Text;
+            string unPasse = "";
+            string unePassion = "";
+            string unAvenir = "";
+            string unCompagnon = "";
+            string unePassionPlusUnAvenir = PassionEtAvenirAleatoireFille(listPassionsBackground, listAvenirBackground, unePassion, unAvenir);
+            string unPasseSombre = PasseSombreEtTortueuxAleatoireFille(listPasseBackground, unPasse);
+            string compagnonUltime = UnCompagnonAleatoireFille(listCompagnonBackground, unCompagnon);
+            string paysAleatoire = "";
+            string preposition = "";
+            string prepositionPlusPays = PaysEtPrepositionAleatoire(listPaysBackground, preposition, paysAleatoire);
+            string backgroundFemme = $"{prenom} {nom} est une femme originaire {prepositionPlusPays} où elle y a vécu toute son enfance. Depuis toute petite c'est une grande " +
+                $"passionnée par {unePassionPlusUnAvenir} {unPasseSombre}. {compagnonUltime}";
+            laRichTexBox.Text = backgroundFemme;
         }
     }
 }

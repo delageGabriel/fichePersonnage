@@ -46,8 +46,7 @@ namespace fichePersonnage
             int nbAleatoire = nbRandom.Next((listPrenom.Count));
             prenomRetourner = listPrenom[nbAleatoire];            
             unPrenom.Text = prenomRetourner;
-            listPrenom.Clear();
-            
+            listPrenom.Clear();            
         }
 
         public void PrenomAleatoireFille(TextBox unPrenom)
