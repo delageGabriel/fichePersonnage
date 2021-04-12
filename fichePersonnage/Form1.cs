@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Spire.Doc;
+using Spire.Doc.Documents;
 
 namespace fichePersonnage
 {
@@ -15,6 +18,10 @@ namespace fichePersonnage
         private Prenom unPrenom;
         private Nom unNom;
         private BackGround unBackGround;
+        private Document document;
+        private string cheminTemplate;
+        private string cheminSauvegardeDocx;
+        private string cheminSauvegardePdf;
 
         public Form1()
         {
@@ -23,6 +30,10 @@ namespace fichePersonnage
             unPrenom = new Prenom("Isse");
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
+            document = new Document();
+            cheminTemplate = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\templateFichePerso.docx";
+            cheminSauvegardeDocx = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.docx";
+            cheminSauvegardePdf = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.pdf";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -273,6 +284,46 @@ namespace fichePersonnage
                 txtMental.Enabled = false;
                 btnGenerPrenom.Enabled = false;
             }
+        }
+
+        private void btnSoumettre_Click(object sender, EventArgs e)
+        {
+            // initialise l'objet mot
+            document.LoadFromFile(cheminTemplate);
+            // récupère les chaînes à remplacer  
+            Dictionary<string, string> dictReplace = GetReplaceDictionary();
+            // Remplacer le texte  
+            foreach (KeyValuePair<string, string> kvp  in  dictReplace)
+            {
+                document.Replace(kvp.Key, kvp.Value, true, true);
+            }
+            // Enregistrer le fichier doc.  
+            document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
+            // Convertir en PDF  
+            document.SaveToFile(cheminSauvegardePdf, FileFormat.PDF);
+            MessageBox.Show("Toutes les tâches sont terminées.", "Traitement des documents", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            document.Close();
+        }
+
+        Dictionary<string, string> GetReplaceDictionary()
+        {
+            Dictionary<string, string> replaceDict = new Dictionary<string, string>();
+            replaceDict.Add("#Nom#", txtNom.Text.Trim());
+            replaceDict.Add("#Prenom#", txtPrenom.Text);
+            replaceDict.Add("#Histoire#", rtbHistoire.Text.Trim());
+            replaceDict.Add("#Physique#", txtPhysique.Text);
+            replaceDict.Add("#Social#", txtSocial.Text);
+            replaceDict.Add("#Mental#", txtMental.Text.Trim());
+            replaceDict.Add("#Force#", txtForce.Text.Trim());
+            replaceDict.Add("#Perception#", txtPerception.Text.Trim());
+            replaceDict.Add("#Constitution#", txtConstitution.Text);
+            // string isEmployed = this.radio_isEmployed_Yes.Checked ? "Yes" : "No";
+            replaceDict.Add("#Charisme#", txtCharisme.Text.Trim());
+            replaceDict.Add("#Intelligence#", txtIntelligence.Text.Trim());
+            replaceDict.Add("#Dextérité#", txtDexterite.Text.Trim());
+            replaceDict.Add("#Résistance#", txtDexterite.Text.Trim());
+
+            return replaceDict;
         }
     }
 }

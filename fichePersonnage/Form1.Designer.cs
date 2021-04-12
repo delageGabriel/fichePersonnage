@@ -34,8 +34,6 @@
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.lblPrenom = new System.Windows.Forms.Label();
             this.btnGenerPrenom = new System.Windows.Forms.Button();
-            this.imgAvatarPerso = new System.Windows.Forms.PictureBox();
-            this.btnImporter = new System.Windows.Forms.Button();
             this.rdbHomme = new System.Windows.Forms.RadioButton();
             this.rdbFemme = new System.Windows.Forms.RadioButton();
             this.lblSexe = new System.Windows.Forms.Label();
@@ -64,17 +62,12 @@
             this.txtIntelligence = new System.Windows.Forms.TextBox();
             this.txtDexterite = new System.Windows.Forms.TextBox();
             this.txtResistance = new System.Windows.Forms.TextBox();
-            this.lblAttributs = new System.Windows.Forms.Label();
-            this.btnAjouterAttribut = new System.Windows.Forms.Button();
-            this.lblCompetences = new System.Windows.Forms.Label();
-            this.btnAjoutCompetences = new System.Windows.Forms.Button();
-            this.lblSize = new System.Windows.Forms.Label();
             this.lblLimiteCaractere = new System.Windows.Forms.Label();
             this.lblAventures = new System.Windows.Forms.Label();
             this.rdbModeAventures = new System.Windows.Forms.RadioButton();
             this.lblModeNoeliste = new System.Windows.Forms.Label();
             this.rdbNoeliste = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAvatarPerso)).BeginInit();
+            this.btnSoumettre = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNom
@@ -132,23 +125,6 @@
             this.btnGenerPrenom.Text = "Générer Prénom";
             this.btnGenerPrenom.UseVisualStyleBackColor = true;
             this.btnGenerPrenom.Click += new System.EventHandler(this.btnGenerPrenom_Click);
-            // 
-            // imgAvatarPerso
-            // 
-            this.imgAvatarPerso.Location = new System.Drawing.Point(379, 15);
-            this.imgAvatarPerso.Name = "imgAvatarPerso";
-            this.imgAvatarPerso.Size = new System.Drawing.Size(154, 154);
-            this.imgAvatarPerso.TabIndex = 6;
-            this.imgAvatarPerso.TabStop = false;
-            // 
-            // btnImporter
-            // 
-            this.btnImporter.Location = new System.Drawing.Point(421, 175);
-            this.btnImporter.Name = "btnImporter";
-            this.btnImporter.Size = new System.Drawing.Size(75, 23);
-            this.btnImporter.TabIndex = 7;
-            this.btnImporter.Text = "Importer";
-            this.btnImporter.UseVisualStyleBackColor = true;
             // 
             // rdbHomme
             // 
@@ -417,51 +393,6 @@
             this.txtResistance.TextChanged += new System.EventHandler(this.txtResistance_TextChanged);
             this.txtResistance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResistance_KeyPress);
             // 
-            // lblAttributs
-            // 
-            this.lblAttributs.AutoSize = true;
-            this.lblAttributs.Location = new System.Drawing.Point(265, 693);
-            this.lblAttributs.Name = "lblAttributs";
-            this.lblAttributs.Size = new System.Drawing.Size(45, 13);
-            this.lblAttributs.TabIndex = 38;
-            this.lblAttributs.Text = "Attributs";
-            // 
-            // btnAjouterAttribut
-            // 
-            this.btnAjouterAttribut.Location = new System.Drawing.Point(242, 709);
-            this.btnAjouterAttribut.Name = "btnAjouterAttribut";
-            this.btnAjouterAttribut.Size = new System.Drawing.Size(90, 23);
-            this.btnAjouterAttribut.TabIndex = 39;
-            this.btnAjouterAttribut.Text = "Ajouter Attributs";
-            this.btnAjouterAttribut.UseVisualStyleBackColor = true;
-            // 
-            // lblCompetences
-            // 
-            this.lblCompetences.AutoSize = true;
-            this.lblCompetences.Location = new System.Drawing.Point(249, 765);
-            this.lblCompetences.Name = "lblCompetences";
-            this.lblCompetences.Size = new System.Drawing.Size(72, 13);
-            this.lblCompetences.TabIndex = 40;
-            this.lblCompetences.Text = "Compétences";
-            // 
-            // btnAjoutCompetences
-            // 
-            this.btnAjoutCompetences.Location = new System.Drawing.Point(218, 781);
-            this.btnAjoutCompetences.Name = "btnAjoutCompetences";
-            this.btnAjoutCompetences.Size = new System.Drawing.Size(129, 23);
-            this.btnAjoutCompetences.TabIndex = 41;
-            this.btnAjoutCompetences.Text = "Ajouter Compétences";
-            this.btnAjoutCompetences.UseVisualStyleBackColor = true;
-            // 
-            // lblSize
-            // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(361, 175);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(54, 13);
-            this.lblSize.TabIndex = 42;
-            this.lblSize.Text = "154 x 154";
-            // 
             // lblLimiteCaractere
             // 
             this.lblLimiteCaractere.AutoSize = true;
@@ -511,21 +442,27 @@
             this.rdbNoeliste.UseVisualStyleBackColor = true;
             this.rdbNoeliste.CheckedChanged += new System.EventHandler(this.rdbNoeliste_CheckedChanged);
             // 
+            // btnSoumettre
+            // 
+            this.btnSoumettre.Location = new System.Drawing.Point(237, 649);
+            this.btnSoumettre.Name = "btnSoumettre";
+            this.btnSoumettre.Size = new System.Drawing.Size(75, 23);
+            this.btnSoumettre.TabIndex = 50;
+            this.btnSoumettre.Text = "Soumettre";
+            this.btnSoumettre.UseVisualStyleBackColor = true;
+            this.btnSoumettre.Click += new System.EventHandler(this.btnSoumettre_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 835);
+            this.ClientSize = new System.Drawing.Size(575, 702);
+            this.Controls.Add(this.btnSoumettre);
             this.Controls.Add(this.rdbNoeliste);
             this.Controls.Add(this.lblModeNoeliste);
             this.Controls.Add(this.rdbModeAventures);
             this.Controls.Add(this.lblAventures);
             this.Controls.Add(this.lblLimiteCaractere);
-            this.Controls.Add(this.lblSize);
-            this.Controls.Add(this.btnAjoutCompetences);
-            this.Controls.Add(this.lblCompetences);
-            this.Controls.Add(this.btnAjouterAttribut);
-            this.Controls.Add(this.lblAttributs);
             this.Controls.Add(this.txtResistance);
             this.Controls.Add(this.txtDexterite);
             this.Controls.Add(this.txtIntelligence);
@@ -554,8 +491,6 @@
             this.Controls.Add(this.lblSexe);
             this.Controls.Add(this.rdbFemme);
             this.Controls.Add(this.rdbHomme);
-            this.Controls.Add(this.btnImporter);
-            this.Controls.Add(this.imgAvatarPerso);
             this.Controls.Add(this.btnGenerPrenom);
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.txtPrenom);
@@ -565,7 +500,6 @@
             this.Name = "Form1";
             this.Text = "Fiche Personnage";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgAvatarPerso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,8 +513,6 @@
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Button btnGenerPrenom;
-        private System.Windows.Forms.PictureBox imgAvatarPerso;
-        private System.Windows.Forms.Button btnImporter;
         private System.Windows.Forms.RadioButton rdbHomme;
         private System.Windows.Forms.RadioButton rdbFemme;
         private System.Windows.Forms.Label lblSexe;
@@ -609,16 +541,12 @@
         private System.Windows.Forms.TextBox txtIntelligence;
         private System.Windows.Forms.TextBox txtDexterite;
         private System.Windows.Forms.TextBox txtResistance;
-        private System.Windows.Forms.Label lblAttributs;
-        private System.Windows.Forms.Button btnAjouterAttribut;
-        private System.Windows.Forms.Label lblCompetences;
-        private System.Windows.Forms.Button btnAjoutCompetences;
-        private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblLimiteCaractere;
         private System.Windows.Forms.Label lblAventures;
         private System.Windows.Forms.RadioButton rdbModeAventures;
         private System.Windows.Forms.Label lblModeNoeliste;
         private System.Windows.Forms.RadioButton rdbNoeliste;
+        private System.Windows.Forms.Button btnSoumettre;
     }
 }
 
