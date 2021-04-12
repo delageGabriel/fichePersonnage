@@ -68,6 +68,9 @@
             this.lblModeNoeliste = new System.Windows.Forms.Label();
             this.rdbNoeliste = new System.Windows.Forms.RadioButton();
             this.btnSoumettre = new System.Windows.Forms.Button();
+            this.pteBox = new System.Windows.Forms.PictureBox();
+            this.btnImporterImage = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNom
@@ -452,11 +455,33 @@
             this.btnSoumettre.UseVisualStyleBackColor = true;
             this.btnSoumettre.Click += new System.EventHandler(this.btnSoumettre_Click);
             // 
+            // pteBox
+            // 
+            this.pteBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pteBox.Location = new System.Drawing.Point(343, 15);
+            this.pteBox.Name = "pteBox";
+            this.pteBox.Size = new System.Drawing.Size(206, 187);
+            this.pteBox.TabIndex = 51;
+            this.pteBox.TabStop = false;
+            this.pteBox.Click += new System.EventHandler(this.pteBox_Click);
+            // 
+            // btnImporterImage
+            // 
+            this.btnImporterImage.Location = new System.Drawing.Point(391, 217);
+            this.btnImporterImage.Name = "btnImporterImage";
+            this.btnImporterImage.Size = new System.Drawing.Size(91, 23);
+            this.btnImporterImage.TabIndex = 52;
+            this.btnImporterImage.Text = "Importer Image";
+            this.btnImporterImage.UseVisualStyleBackColor = true;
+            this.btnImporterImage.Click += new System.EventHandler(this.btnImporterImage_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 702);
+            this.Controls.Add(this.btnImporterImage);
+            this.Controls.Add(this.pteBox);
             this.Controls.Add(this.btnSoumettre);
             this.Controls.Add(this.rdbNoeliste);
             this.Controls.Add(this.lblModeNoeliste);
@@ -500,6 +525,7 @@
             this.Name = "Form1";
             this.Text = "Fiche Personnage";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pteBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,6 +573,8 @@
         private System.Windows.Forms.Label lblModeNoeliste;
         private System.Windows.Forms.RadioButton rdbNoeliste;
         private System.Windows.Forms.Button btnSoumettre;
+        private System.Windows.Forms.PictureBox pteBox;
+        private System.Windows.Forms.Button btnImporterImage;
     }
 }
 

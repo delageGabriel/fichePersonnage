@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Spire.Doc;
+using Spire.Doc.Fields;
 using Spire.Doc.Documents;
 
 namespace fichePersonnage
@@ -22,6 +23,8 @@ namespace fichePersonnage
         private string cheminTemplate;
         private string cheminSauvegardeDocx;
         private string cheminSauvegardePdf;
+        private string cheminImage;
+        private ImageClasse uneImage;
 
         public Form1()
         {
@@ -34,6 +37,7 @@ namespace fichePersonnage
             cheminTemplate = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\templateFichePerso.docx";
             cheminSauvegardeDocx = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.docx";
             cheminSauvegardePdf = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.pdf";
+            uneImage = new ImageClasse();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -288,6 +292,7 @@ namespace fichePersonnage
 
         private void btnSoumettre_Click(object sender, EventArgs e)
         {
+            
             // initialise l'objet mot
             document.LoadFromFile(cheminTemplate);
             // récupère les chaînes à remplacer  
@@ -297,6 +302,7 @@ namespace fichePersonnage
             {
                 document.Replace(kvp.Key, kvp.Value, true, true);
             }
+            
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
             // Convertir en PDF  
@@ -305,12 +311,14 @@ namespace fichePersonnage
             document.Close();
         }
 
-        Dictionary<string, string> GetReplaceDictionary()
+        public Dictionary<string, string> GetReplaceDictionary()
         {
             Dictionary<string, string> replaceDict = new Dictionary<string, string>();
+            Dictionary<string, Image> imageDict = new Dictionary<string, Image>();
             replaceDict.Add("#Nom#", txtNom.Text.Trim());
             replaceDict.Add("#Prenom#", txtPrenom.Text);
             replaceDict.Add("#Histoire#", rtbHistoire.Text.Trim());
+            imageDict.Add("#Cadre#", pteBox.Image);
             replaceDict.Add("#Physique#", txtPhysique.Text);
             replaceDict.Add("#Social#", txtSocial.Text);
             replaceDict.Add("#Mental#", txtMental.Text.Trim());
@@ -324,6 +332,26 @@ namespace fichePersonnage
             replaceDict.Add("#Résistance#", txtDexterite.Text.Trim());
 
             return replaceDict;
+        }
+
+        private void btnImporterImage_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog opf = new OpenFileDialog();
+            //opf.Title = "Choisissez votre image";
+            //opf.Filter = "JPEG(*.jpeg)|.*jpeg|JPG(*.jpg)|.*jpg|PNG(*.png)|*.png";
+
+            //if(opf.ShowDialog()== DialogResult.OK)
+            //{
+            //    Bitmap image = new Bitmap(opf.FileName);
+            //    pteBox.Image = image;
+            //}
+
+            pteBox.Image = uneImage.GetUneImage();
+        }
+
+        private void pteBox_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

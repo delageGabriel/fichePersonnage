@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace fichePersonnage
@@ -11,7 +12,7 @@ namespace fichePersonnage
     {
         // Attributs
         private string prenom;
-        private ClasseIni fichierIni = new ClasseIni(@"C:\Users\Utilisateur\source\repos\fichePersonnage\fichePersonnage\fichiersIni\prenom.ini");
+        private ClasseIni fichierIni = new ClasseIni(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\fichiersIni\prenom.ini");
 
         // Constructeur
         public Prenom(string prenom)
@@ -74,5 +75,7 @@ namespace fichePersonnage
             unPrenom.Text = prenomRetourner;
             listPrenom.Clear();
         }
+
+
     }
 }

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="classes\BackGround.cs" />
     <Compile Include="classes\ClasseIni.cs" />
+    <Compile Include="classes\ImageClasse.cs" />
     <Compile Include="classes\Nom.cs" />
     <Compile Include="classes\Prenom.cs" />
     <Compile Include="Form1.cs">
