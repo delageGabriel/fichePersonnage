@@ -254,75 +254,65 @@ namespace fichePersonnage
 
         }
 
-        private void rdbModeAventures_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbModeAventures.Checked == true)
-            {
-                txtPhysique.Enabled = true;
-                txtSocial.Enabled = true;
-                txtMental.Enabled = true;
-                txtForce.Enabled = false;
-                txtPerception.Enabled = false;
-                txtConstitution.Enabled = false;
-                txtCharisme.Enabled = false;
-                txtIntelligence.Enabled = false;
-                txtDexterite.Enabled = false;
-                txtResistance.Enabled = false;
-                btnGenerPrenom.Enabled = false;
-            }
-        }
-
-        private void rdbNoeliste_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbNoeliste.Checked == true)
-            {
-                txtForce.Enabled = true;
-                txtPerception.Enabled = true;
-                txtConstitution.Enabled = true;
-                txtCharisme.Enabled = true;
-                txtIntelligence.Enabled = true;
-                txtDexterite.Enabled = true;
-                txtResistance.Enabled = true;
-                txtPhysique.Enabled = false;
-                txtSocial.Enabled = false;
-                txtMental.Enabled = false;
-                btnGenerPrenom.Enabled = false;
-            }
-        }
-
         private void btnSoumettre_Click(object sender, EventArgs e)
         {
             document.LoadFromFile(cheminTemplate);
             string sexe = "";
-            
-            if(rdbHomme.Checked == true)
+
+            if (rdbHomme.Checked == true)
             {
                 sexe = "Homme";
             }
-            else if(rdbFemme.Checked == true)
+            else if (rdbFemme.Checked == true)
             {
                 sexe = "Femme";
             }
-            else if(rdbAutre.Checked == true && txtAutre != null)
+            else if (rdbAutre.Checked == true && txtAutre != null)
             {
                 sexe = txtAutre.Text;
             }
             Image picture = uneImage.GetPictureBox(pteBox);
             Section section = document.Sections[0];
-            Paragraph paragraphe 
+            Table table = section.AddTable(true);
+            Paragraph paragraphe
                 = section.Paragraphs.Count > 0 ? section.Paragraphs[0] : section.AddParagraph();
-            paragraphe.AppendText(txtNom.Text.Trim() + " " + txtPrenom.Text.Trim());
-            paragraphe.ApplyStyle(BuiltinStyle.Heading1);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            TextRange rangeNomPrenom = paragraphe.AppendText(txtNom.Text + " " + txtPrenom.Text);
+            rangeNomPrenom.CharacterFormat.FontSize = 36;
             paragraphe = section.AddParagraph();
-            paragraphe.AppendText("Sexe : " + sexe);
-            paragraphe.ApplyStyle(BuiltinStyle.Heading3);
+
+            TextRange rangeSexe = paragraphe.AppendText("Sexe : " + sexe);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeSexe.CharacterFormat.FontSize = 32;
             paragraphe = section.AddParagraph();
-            DocPicture imageAImporter = document.Sections[0].Paragraphs[2].AppendPicture(picture);
-            imageAImporter.HorizontalAlignment = ShapeHorizontalAlignment.Right;
+
+            DocPicture imageARepositionner = paragraphe.AppendPicture(picture);
+            imageARepositionner.TextWrappingStyle = TextWrappingStyle.Square;
+            imageARepositionner.HorizontalPosition = 300.0F;
+            imageARepositionner.VerticalPosition = -100.0F;
             paragraphe = section.AddParagraph();
+
+            TextRange rangeIntituleHistoire = paragraphe.AppendText("Histoire :");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeIntituleHistoire.CharacterFormat.FontSize = 28;
+            paragraphe = section.AddParagraph();
+
             paragraphe.AppendText(rtbHistoire.Text);
             paragraphe.ApplyStyle(BuiltinStyle.BodyText);
             paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeCaracteristiques = paragraphe.AppendText("Caractéristiques :");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeCaracteristiques.CharacterFormat.FontSize = 28;
+            paragraphe = section.AddParagraph();
+
+            paragraphe.AppendText("Physique" + "                        " + "Social" + "                        " + "Mental");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            paragraphe = section.AddParagraph();
+
+            paragraphe.AppendText(txtPhysique.Text + "                        " + txtSocial.Text + "                        " + txtMental.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
             // Convertir en PDF  
@@ -333,16 +323,6 @@ namespace fichePersonnage
 
         private void btnImporterImage_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog opf = new OpenFileDialog();
-            //opf.Title = "Choisissez votre image";
-            //opf.Filter = "JPEG(*.jpeg)|.*jpeg|JPG(*.jpg)|.*jpg|PNG(*.png)|*.png";
-
-            //if(opf.ShowDialog()== DialogResult.OK)
-            //{
-            //    Bitmap image = new Bitmap(opf.FileName);
-            //    pteBox.Image = image;
-            //}
-
             pteBox.Image = uneImage.GetUneImage();
         }
 

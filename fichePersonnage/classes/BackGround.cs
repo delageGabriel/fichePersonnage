@@ -254,7 +254,7 @@ namespace fichePersonnage
             listPasse.Add("Plus jeune, elle faisait déjà des petits boulots à côté des études pour aider sa famille pauvre.");
             listPasse.Add("Plus jeune, elle faisait parti d'une association sportive où il y remporta quelques médailles dont elle est très fier.");
             listPasse.Add("Plus jeune, elle se perdit en forêt, ce qui lui causa un traumatisme profond, depuis elle a peur de s'aventurer seul dans des endroits sans aucune présence");
-            listPasse.Add("Plus jeune, elle resta impassible devant un tigre qui rugit devant elle dans un zoo, elle est surnommée depuis Lily la tigresse");
+            listPasse.Add("Plus jeune, elle resta impassible devant un tigre qui rugit devant elle dans un zoo, elle est surnommée depuis Lily la tigresse.");
             listPasse.Add("Plus jeune, elle était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais elle réussit à se reprendre en main.");
             listPasse.Add("Plus jeune, elle n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais elle surmonta ces harcélements.");
 
@@ -277,7 +277,7 @@ namespace fichePersonnage
             listPasse.Add("Plus jeune, il fit quelques bêtises qui lui valurent de passer du temps en prison où il s'y endurcit aussi bien mentalement que physiquement.");
             listPasse.Add("Plus jeune, il faisait déjà des petits boulots à côté des études pour aider sa famille pauvre.");
             listPasse.Add("Plus jeune, il faisait parti d'une association sportive où il y remporta quelques médailles dont il est très fier.");
-            listPasse.Add("Plus jeune, il se perdit en forêt, ce qui lui causa un traumatisme profond, depuis il a peur de s'aventurer seul dans des endroits sans aucune présence");
+            listPasse.Add("Plus jeune, il se perdit en forêt, ce qui lui causa un traumatisme profond, depuis il a peur de s'aventurer seul dans des endroits sans aucune présence.");
             listPasse.Add("Plus jeune, il survécut à une rencontre avec sanglier qu'il battu à mains nues, parce que sans rigoler c'était pas plus compliqué qu'avec un couteau. Son surnom depuis est Pumba.");
             listPasse.Add("Plus jeune, il était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais il réussit à se reprendre en main.");
             listPasse.Add("Plus jeune, il n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais il surmonta ces harcélements.");

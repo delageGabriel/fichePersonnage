@@ -12,10 +12,10 @@ namespace fichePersonnage
     {
         public Bitmap GetUneImage()
         {
-            Bitmap uneImage = new Bitmap(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\img\roto.png");
+            Bitmap uneImage = new Bitmap(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\img\sansAvatar.png");
             OpenFileDialog opf = new OpenFileDialog();
             opf.Title = "Choisissez votre image";
-            opf.Filter = "JPEG(*.jpeg)|.*jpeg|JPG(*.jpg)|.*jpg|PNG(*.png)|*.png";
+            opf.Filter = "JPEG|*.jpg|PNG|*.png";
 
             if (opf.ShowDialog() == DialogResult.OK)
             {
