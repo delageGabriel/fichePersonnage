@@ -458,16 +458,17 @@
             // pteBox
             // 
             this.pteBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pteBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pteBox.Location = new System.Drawing.Point(343, 15);
             this.pteBox.Name = "pteBox";
-            this.pteBox.Size = new System.Drawing.Size(206, 187);
+            this.pteBox.Size = new System.Drawing.Size(200, 200);
             this.pteBox.TabIndex = 51;
             this.pteBox.TabStop = false;
             this.pteBox.Click += new System.EventHandler(this.pteBox_Click);
             // 
             // btnImporterImage
             // 
-            this.btnImporterImage.Location = new System.Drawing.Point(391, 217);
+            this.btnImporterImage.Location = new System.Drawing.Point(391, 232);
             this.btnImporterImage.Name = "btnImporterImage";
             this.btnImporterImage.Size = new System.Drawing.Size(91, 23);
             this.btnImporterImage.TabIndex = 52;

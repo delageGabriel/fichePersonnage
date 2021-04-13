@@ -20,15 +20,15 @@ namespace fichePersonnage
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 Bitmap imageRecuperee = new Bitmap(opf.FileName);
-                Bitmap imageRedimensionner = new Bitmap(imageRecuperee, new Size(206, 187));
+                Bitmap imageRedimensionner = new Bitmap(imageRecuperee, new Size(200, 200));
                 uneImage = imageRedimensionner;
             }
             return uneImage;
         }
 
-        public PictureBox GetPictureBox(PictureBox unePictureBox)
+        public Image GetPictureBox(PictureBox unePictureBox)
         {
-            return unePictureBox;
+            return unePictureBox.Image;
         }
     }
 }

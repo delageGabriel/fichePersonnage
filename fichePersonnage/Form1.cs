@@ -11,6 +11,7 @@ using System.IO;
 using Spire.Doc;
 using Spire.Doc.Fields;
 using Spire.Doc.Documents;
+using HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment;
 
 namespace fichePersonnage
 {
@@ -23,7 +24,6 @@ namespace fichePersonnage
         private string cheminTemplate;
         private string cheminSauvegardeDocx;
         private string cheminSauvegardePdf;
-        private string cheminImage;
         private ImageClasse uneImage;
 
         public Form1()
@@ -51,7 +51,7 @@ namespace fichePersonnage
             {
                 txtPrenom.Enabled = true;
                 btnGenerPrenom.Enabled = true;
-            }            
+            }
         }
 
         private void btnGenerzNom_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace fichePersonnage
 
         private void btnGenerPrenom_Click(object sender, EventArgs e)
         {
-            if(rdbHomme.Checked == true)
+            if (rdbHomme.Checked == true)
             {
                 unPrenom.PrenomAleatoireGarcon(txtPrenom);
             }
@@ -69,7 +69,7 @@ namespace fichePersonnage
             {
                 unPrenom.PrenomAleatoireFille(txtPrenom);
             }
-            
+
         }
 
         private void txtPrenom_TextChanged(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace fichePersonnage
         {
             if (rdbHomme.Checked == true)
             {
-                unBackGround.GenererBackGroundGarcon(rtbHistoire, txtPrenom, txtNom); 
+                unBackGround.GenererBackGroundGarcon(rtbHistoire, txtPrenom, txtNom);
             }
             else if (rdbFemme.Checked == true)
             {
@@ -115,7 +115,7 @@ namespace fichePersonnage
 
         private void rtbHistoire_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtPointsRepartition_KeyPress(object sender, KeyPressEventArgs e)
@@ -292,46 +292,43 @@ namespace fichePersonnage
 
         private void btnSoumettre_Click(object sender, EventArgs e)
         {
-            
-            // initialise l'objet mot
             document.LoadFromFile(cheminTemplate);
-            // récupère les chaînes à remplacer  
-            Dictionary<string, string> dictReplace = GetReplaceDictionary();
-            // Remplacer le texte  
-            foreach (KeyValuePair<string, string> kvp  in  dictReplace)
-            {
-                document.Replace(kvp.Key, kvp.Value, true, true);
-            }
+            string sexe = "";
             
+            if(rdbHomme.Checked == true)
+            {
+                sexe = "Homme";
+            }
+            else if(rdbFemme.Checked == true)
+            {
+                sexe = "Femme";
+            }
+            else if(rdbAutre.Checked == true && txtAutre != null)
+            {
+                sexe = txtAutre.Text;
+            }
+            Image picture = uneImage.GetPictureBox(pteBox);
+            Section section = document.Sections[0];
+            Paragraph paragraphe 
+                = section.Paragraphs.Count > 0 ? section.Paragraphs[0] : section.AddParagraph();
+            paragraphe.AppendText(txtNom.Text.Trim() + " " + txtPrenom.Text.Trim());
+            paragraphe.ApplyStyle(BuiltinStyle.Heading1);
+            paragraphe = section.AddParagraph();
+            paragraphe.AppendText("Sexe : " + sexe);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading3);
+            paragraphe = section.AddParagraph();
+            DocPicture imageAImporter = document.Sections[0].Paragraphs[2].AppendPicture(picture);
+            imageAImporter.HorizontalAlignment = ShapeHorizontalAlignment.Right;
+            paragraphe = section.AddParagraph();
+            paragraphe.AppendText(rtbHistoire.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.BodyText);
+            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
             // Convertir en PDF  
             document.SaveToFile(cheminSauvegardePdf, FileFormat.PDF);
             MessageBox.Show("Toutes les tâches sont terminées.", "Traitement des documents", MessageBoxButtons.OK, MessageBoxIcon.Information);
             document.Close();
-        }
-
-        public Dictionary<string, string> GetReplaceDictionary()
-        {
-            Dictionary<string, string> replaceDict = new Dictionary<string, string>();
-            Dictionary<string, Image> imageDict = new Dictionary<string, Image>();
-            replaceDict.Add("#Nom#", txtNom.Text.Trim());
-            replaceDict.Add("#Prenom#", txtPrenom.Text);
-            replaceDict.Add("#Histoire#", rtbHistoire.Text.Trim());
-            imageDict.Add("#Cadre#", pteBox.Image);
-            replaceDict.Add("#Physique#", txtPhysique.Text);
-            replaceDict.Add("#Social#", txtSocial.Text);
-            replaceDict.Add("#Mental#", txtMental.Text.Trim());
-            replaceDict.Add("#Force#", txtForce.Text.Trim());
-            replaceDict.Add("#Perception#", txtPerception.Text.Trim());
-            replaceDict.Add("#Constitution#", txtConstitution.Text);
-            // string isEmployed = this.radio_isEmployed_Yes.Checked ? "Yes" : "No";
-            replaceDict.Add("#Charisme#", txtCharisme.Text.Trim());
-            replaceDict.Add("#Intelligence#", txtIntelligence.Text.Trim());
-            replaceDict.Add("#Dextérité#", txtDexterite.Text.Trim());
-            replaceDict.Add("#Résistance#", txtDexterite.Text.Trim());
-
-            return replaceDict;
         }
 
         private void btnImporterImage_Click(object sender, EventArgs e)
@@ -351,7 +348,7 @@ namespace fichePersonnage
 
         private void pteBox_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
