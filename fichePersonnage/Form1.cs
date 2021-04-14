@@ -273,7 +273,7 @@ namespace fichePersonnage
             }
             Image picture = uneImage.GetPictureBox(pteBox);
             Section section = document.Sections[0];
-            Table table = section.AddTable(true);
+            // Table table = section.AddTable(true);
             Paragraph paragraphe
                 = section.Paragraphs.Count > 0 ? section.Paragraphs[0] : section.AddParagraph();
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
@@ -307,12 +307,29 @@ namespace fichePersonnage
             rangeCaracteristiques.CharacterFormat.FontSize = 28;
             paragraphe = section.AddParagraph();
 
-            paragraphe.AppendText("Physique" + "                        " + "Social" + "                        " + "Mental");
+            TextRange rangePointsDeVie = paragraphe.AppendText("Points de vies : " + txtPV.Text);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangePointsDeVie.CharacterFormat.FontSize = 19;
             paragraphe = section.AddParagraph();
 
-            paragraphe.AppendText(txtPhysique.Text + "                        " + txtSocial.Text + "                        " + txtMental.Text);
+            TextRange rangePointDeMana = paragraphe.AppendText("Points de Mana : " + txtPM.Text);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangePointDeMana.CharacterFormat.FontSize = 19;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangePhysique = paragraphe.AppendText("Physique : " + txtPhysique.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangePhysique.CharacterFormat.FontSize = 20;
+            paragraphe = section.AddParagraph();
+            TextRange rangeSocial = paragraphe.AppendText("Social : " + txtSocial.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeSocial.CharacterFormat.FontSize = 20;
+            paragraphe = section.AddParagraph();
+            TextRange rangeMental = paragraphe.AppendText("Mental : " + txtMental.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeMental.CharacterFormat.FontSize = 20;
+            paragraphe = section.AddParagraph();
+
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
             // Convertir en PDF  
@@ -329,6 +346,22 @@ namespace fichePersonnage
         private void pteBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

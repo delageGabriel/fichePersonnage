@@ -256,7 +256,7 @@ namespace fichePersonnage
             listPasse.Add("Plus jeune, elle se perdit en forêt, ce qui lui causa un traumatisme profond, depuis elle a peur de s'aventurer seul dans des endroits sans aucune présence");
             listPasse.Add("Plus jeune, elle resta impassible devant un tigre qui rugit devant elle dans un zoo, elle est surnommée depuis Lily la tigresse.");
             listPasse.Add("Plus jeune, elle était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais elle réussit à se reprendre en main.");
-            listPasse.Add("Plus jeune, elle n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais elle surmonta ces harcélements.");
+            listPasse.Add("Plus jeune, elle n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais elle surmonta ces harcèlements.");
 
             int nbRandomPasse = nbAleatoire.Next((listPasse.Count));
             passe = listPasse[nbRandomPasse];
@@ -280,7 +280,7 @@ namespace fichePersonnage
             listPasse.Add("Plus jeune, il se perdit en forêt, ce qui lui causa un traumatisme profond, depuis il a peur de s'aventurer seul dans des endroits sans aucune présence.");
             listPasse.Add("Plus jeune, il survécut à une rencontre avec sanglier qu'il battu à mains nues, parce que sans rigoler c'était pas plus compliqué qu'avec un couteau. Son surnom depuis est Pumba.");
             listPasse.Add("Plus jeune, il était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais il réussit à se reprendre en main.");
-            listPasse.Add("Plus jeune, il n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais il surmonta ces harcélements.");
+            listPasse.Add("Plus jeune, il n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais il surmonta ces harcèlements.");
 
             int nbRandomPasse = nbAleatoire.Next((listPasse.Count));
             passe = listPasse[nbRandomPasse];
