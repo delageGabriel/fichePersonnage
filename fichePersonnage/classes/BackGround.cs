@@ -12,7 +12,7 @@ namespace fichePersonnage
         // Attributs
         private string backGround;
         private string préposition;
-        private ClasseIni fichierIniPays = new ClasseIni(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\fichiersIni\pays.ini");
+        private ClasseIni fichierIniPays = new ClasseIni("./fichePersonnage/fichiersIni/pays.ini");
         private List<string> listBackGround = new List<string>();
 
         // Constructeur

@@ -12,7 +12,7 @@ namespace fichePersonnage
     {
         public Bitmap GetUneImage()
         {
-            Bitmap uneImage = new Bitmap(@"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\img\sansAvatar.png");
+            Bitmap uneImage = new Bitmap("./fichePersonnage/img/sansAvatar.png");
             OpenFileDialog opf = new OpenFileDialog();
             opf.Title = "Choisissez votre image";
             opf.Filter = "JPEG|*.jpg|PNG|*.png";

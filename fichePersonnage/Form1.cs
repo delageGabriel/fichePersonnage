@@ -34,9 +34,9 @@ namespace fichePersonnage
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
             document = new Document();
-            cheminTemplate = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\templateFichePerso.docx";
-            cheminSauvegardeDocx = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.docx";
-            cheminSauvegardePdf = @"C:\Users\Utilisateur\source\repos\delageGabriel\fichePersonnage\fichePersonnage\template\fichePersonnage.pdf";
+            cheminTemplate = "./fichePersonnage/template/templateFichePerso.docx";
+            cheminSauvegardeDocx = "./fichePersonnage/template/fichePersonnage.docx";
+            cheminSauvegardePdf = "./fichePersonnage/template/fichePersonnage.pdf";
             uneImage = new ImageClasse();
         }
 

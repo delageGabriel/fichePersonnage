@@ -11,7 +11,7 @@ namespace fichePersonnage
     {
         // Attributs
         private string nom;
-        private ClasseIni fichiersIni = new ClasseIni(@"C:\Users\Utilisateur\source\repos\fichePersonnage\fichePersonnage\fichiersIni\nom.ini");
+        private ClasseIni fichiersIni = new ClasseIni("./fichePersonnage/fichiersIni/nom.ini");
 
         // Constructeur
         public Nom(string nom)
