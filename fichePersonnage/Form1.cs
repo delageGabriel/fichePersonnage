@@ -24,6 +24,7 @@ namespace fichePersonnage
         private Nom unNom;
         private BackGround unBackGround;
         private Document document;
+        private Caracteristiques caracteristiques;
         private string cheminTemplate;
         private string cheminSauvegardeDocx;
         private string cheminSauvegardePdf;
@@ -36,6 +37,7 @@ namespace fichePersonnage
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
             document = new Document();
+            caracteristiques = new Caracteristiques();
             cheminTemplate = Path.GetFullPath("template/templateFichePerso.docx");
             cheminSauvegardeDocx = Path.GetFullPath("template/fichePersonnage.docx");
             cheminSauvegardePdf = Path.GetFullPath("template/fichePersonnage.pdf");
@@ -363,6 +365,34 @@ namespace fichePersonnage
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtPV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPV_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtNnPointRepartir_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNnPointRepartir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnRepartition_Click(object sender, EventArgs e)
+        {
+            caracteristiques.RepartitionPointsPVPMAleatoire(txtNnPointRepartir, txtPV, txtPM);
         }
     }
 }

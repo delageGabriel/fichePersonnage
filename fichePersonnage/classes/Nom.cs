@@ -27,6 +27,7 @@ namespace fichePersonnage
         {
             bool play = true;
             Random nbRandom = new Random();
+            byte[] bytes;
             string prenomRetourner;
             int i = 1;
             List<string> listNom = new List<string>();
@@ -44,7 +45,8 @@ namespace fichePersonnage
             }
 
             int nbAleatoire = nbRandom.Next((listNom.Count));
-            prenomRetourner = listNom[nbAleatoire];
+            bytes = Encoding.Default.GetBytes(listNom[nbAleatoire]);
+            prenomRetourner = Encoding.UTF8.GetString(bytes);
             unNom.Text = prenomRetourner;
             listNom.Clear();
         }

@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\BackGround.cs" />
+    <Compile Include="classes\Caracteristiques.cs" />
     <Compile Include="classes\ClasseIni.cs" />
     <Compile Include="classes\ImageClasse.cs" />
     <Compile Include="classes\Nom.cs" />

@@ -56,6 +56,9 @@
             this.txtPM = new System.Windows.Forms.TextBox();
             this.lblPV = new System.Windows.Forms.Label();
             this.lblPM = new System.Windows.Forms.Label();
+            this.lblPointARepartir = new System.Windows.Forms.Label();
+            this.btnRepartition = new System.Windows.Forms.Button();
+            this.txtNnPointRepartir = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,7 +183,7 @@
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(82, 556);
+            this.lblPhysique.Location = new System.Drawing.Point(84, 651);
             this.lblPhysique.Name = "lblPhysique";
             this.lblPhysique.Size = new System.Drawing.Size(50, 13);
             this.lblPhysique.TabIndex = 16;
@@ -189,7 +192,7 @@
             // lblSocial
             // 
             this.lblSocial.AutoSize = true;
-            this.lblSocial.Location = new System.Drawing.Point(267, 555);
+            this.lblSocial.Location = new System.Drawing.Point(269, 650);
             this.lblSocial.Name = "lblSocial";
             this.lblSocial.Size = new System.Drawing.Size(36, 13);
             this.lblSocial.TabIndex = 17;
@@ -198,7 +201,7 @@
             // lblMental
             // 
             this.lblMental.AutoSize = true;
-            this.lblMental.Location = new System.Drawing.Point(440, 554);
+            this.lblMental.Location = new System.Drawing.Point(442, 649);
             this.lblMental.Name = "lblMental";
             this.lblMental.Size = new System.Drawing.Size(39, 13);
             this.lblMental.TabIndex = 18;
@@ -206,7 +209,7 @@
             // 
             // txtPhysique
             // 
-            this.txtPhysique.Location = new System.Drawing.Point(54, 572);
+            this.txtPhysique.Location = new System.Drawing.Point(56, 667);
             this.txtPhysique.Name = "txtPhysique";
             this.txtPhysique.Size = new System.Drawing.Size(100, 20);
             this.txtPhysique.TabIndex = 19;
@@ -215,7 +218,7 @@
             // 
             // txtSocial
             // 
-            this.txtSocial.Location = new System.Drawing.Point(235, 572);
+            this.txtSocial.Location = new System.Drawing.Point(237, 667);
             this.txtSocial.Name = "txtSocial";
             this.txtSocial.Size = new System.Drawing.Size(100, 20);
             this.txtSocial.TabIndex = 20;
@@ -224,7 +227,7 @@
             // 
             // txtMental
             // 
-            this.txtMental.Location = new System.Drawing.Point(407, 572);
+            this.txtMental.Location = new System.Drawing.Point(409, 667);
             this.txtMental.Name = "txtMental";
             this.txtMental.Size = new System.Drawing.Size(100, 20);
             this.txtMental.TabIndex = 21;
@@ -262,7 +265,7 @@
             // 
             // btnSoumettre
             // 
-            this.btnSoumettre.Location = new System.Drawing.Point(246, 617);
+            this.btnSoumettre.Location = new System.Drawing.Point(248, 712);
             this.btnSoumettre.Name = "btnSoumettre";
             this.btnSoumettre.Size = new System.Drawing.Size(75, 23);
             this.btnSoumettre.TabIndex = 50;
@@ -295,15 +298,17 @@
             // 
             // txtPV
             // 
-            this.txtPV.Location = new System.Drawing.Point(145, 514);
+            this.txtPV.Location = new System.Drawing.Point(26, 498);
             this.txtPV.Name = "txtPV";
             this.txtPV.Size = new System.Drawing.Size(100, 20);
             this.txtPV.TabIndex = 53;
+            this.txtPV.TextChanged += new System.EventHandler(this.txtPV_TextChanged);
+            this.txtPV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPV_KeyDown);
             this.txtPV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPV_KeyPress);
             // 
             // txtPM
             // 
-            this.txtPM.Location = new System.Drawing.Point(324, 514);
+            this.txtPM.Location = new System.Drawing.Point(26, 557);
             this.txtPM.Name = "txtPM";
             this.txtPM.Size = new System.Drawing.Size(100, 20);
             this.txtPM.TabIndex = 54;
@@ -312,7 +317,7 @@
             // lblPV
             // 
             this.lblPV.AutoSize = true;
-            this.lblPV.Location = new System.Drawing.Point(160, 498);
+            this.lblPV.Location = new System.Drawing.Point(41, 482);
             this.lblPV.Name = "lblPV";
             this.lblPV.Size = new System.Drawing.Size(68, 13);
             this.lblPV.TabIndex = 55;
@@ -321,17 +326,48 @@
             // lblPM
             // 
             this.lblPM.AutoSize = true;
-            this.lblPM.Location = new System.Drawing.Point(340, 498);
+            this.lblPM.Location = new System.Drawing.Point(42, 541);
             this.lblPM.Name = "lblPM";
             this.lblPM.Size = new System.Drawing.Size(81, 13);
             this.lblPM.TabIndex = 56;
             this.lblPM.Text = "Points de Mana";
             // 
+            // lblPointARepartir
+            // 
+            this.lblPointARepartir.AutoSize = true;
+            this.lblPointARepartir.Location = new System.Drawing.Point(171, 482);
+            this.lblPointARepartir.Name = "lblPointARepartir";
+            this.lblPointARepartir.Size = new System.Drawing.Size(134, 13);
+            this.lblPointARepartir.TabIndex = 57;
+            this.lblPointARepartir.Text = "Nombre de points à répartir";
+            // 
+            // btnRepartition
+            // 
+            this.btnRepartition.Location = new System.Drawing.Point(164, 554);
+            this.btnRepartition.Name = "btnRepartition";
+            this.btnRepartition.Size = new System.Drawing.Size(130, 23);
+            this.btnRepartition.TabIndex = 58;
+            this.btnRepartition.Text = "Répartition automatique";
+            this.btnRepartition.UseVisualStyleBackColor = true;
+            this.btnRepartition.Click += new System.EventHandler(this.btnRepartition_Click);
+            // 
+            // txtNnPointRepartir
+            // 
+            this.txtNnPointRepartir.Location = new System.Drawing.Point(185, 498);
+            this.txtNnPointRepartir.Name = "txtNnPointRepartir";
+            this.txtNnPointRepartir.Size = new System.Drawing.Size(100, 20);
+            this.txtNnPointRepartir.TabIndex = 59;
+            this.txtNnPointRepartir.TextChanged += new System.EventHandler(this.txtNnPointRepartir_TextChanged);
+            this.txtNnPointRepartir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNnPointRepartir_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 653);
+            this.ClientSize = new System.Drawing.Size(575, 759);
+            this.Controls.Add(this.txtNnPointRepartir);
+            this.Controls.Add(this.btnRepartition);
+            this.Controls.Add(this.lblPointARepartir);
             this.Controls.Add(this.lblPM);
             this.Controls.Add(this.lblPV);
             this.Controls.Add(this.txtPM);
@@ -399,6 +435,9 @@
         private System.Windows.Forms.TextBox txtPM;
         private System.Windows.Forms.Label lblPV;
         private System.Windows.Forms.Label lblPM;
+        private System.Windows.Forms.Label lblPointARepartir;
+        private System.Windows.Forms.Button btnRepartition;
+        private System.Windows.Forms.TextBox txtNnPointRepartir;
     }
 }
 
