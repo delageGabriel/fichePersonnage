@@ -12,7 +12,7 @@ namespace fichePersonnage
     {
         // Attributs
         private string prenom;
-        private ClasseIni fichierIni = new ClasseIni("./fichePersonnage/fichiersIni/prenom.ini");
+        private ClasseIni fichierIni = new ClasseIni(Path.GetFullPath("fichiersIni/prenom.ini"));
 
         // Constructeur
         public Prenom(string prenom)

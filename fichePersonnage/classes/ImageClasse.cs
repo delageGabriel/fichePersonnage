@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace fichePersonnage
 {
@@ -12,7 +13,7 @@ namespace fichePersonnage
     {
         public Bitmap GetUneImage()
         {
-            Bitmap uneImage = new Bitmap("./fichePersonnage/img/sansAvatar.png");
+            Bitmap uneImage = new Bitmap(Path.GetFullPath("img/sansAvatar.png"));
             OpenFileDialog opf = new OpenFileDialog();
             opf.Title = "Choisissez votre image";
             opf.Filter = "JPEG|*.jpg|PNG|*.png";

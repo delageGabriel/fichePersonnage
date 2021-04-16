@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace fichePersonnage
 {
@@ -11,7 +12,7 @@ namespace fichePersonnage
     {
         // Attributs
         private string nom;
-        private ClasseIni fichiersIni = new ClasseIni("./fichePersonnage/fichiersIni/nom.ini");
+        private ClasseIni fichiersIni = new ClasseIni(Path.GetFullPath("fichiersIni/nom.ini"));
 
         // Constructeur
         public Nom(string nom)

@@ -12,6 +12,9 @@ using Spire.Doc;
 using Spire.Doc.Fields;
 using Spire.Doc.Documents;
 using HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment;
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using Microsoft.CSharp;
 
 namespace fichePersonnage
 {
@@ -29,14 +32,13 @@ namespace fichePersonnage
         public Form1()
         {
             InitializeComponent();
-
             unPrenom = new Prenom("Isse");
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
             document = new Document();
-            cheminTemplate = "./fichePersonnage/template/templateFichePerso.docx";
-            cheminSauvegardeDocx = "./fichePersonnage/template/fichePersonnage.docx";
-            cheminSauvegardePdf = "./fichePersonnage/template/fichePersonnage.pdf";
+            cheminTemplate = Path.GetFullPath("template/templateFichePerso.docx");
+            cheminSauvegardeDocx = Path.GetFullPath("template/fichePersonnage.docx");
+            cheminSauvegardePdf = Path.GetFullPath("template/fichePersonnage.pdf");
             uneImage = new ImageClasse();
         }
 
@@ -273,7 +275,6 @@ namespace fichePersonnage
             }
             Image picture = uneImage.GetPictureBox(pteBox);
             Section section = document.Sections[0];
-            // Table table = section.AddTable(true);
             Paragraph paragraphe
                 = section.Paragraphs.Count > 0 ? section.Paragraphs[0] : section.AddParagraph();
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);

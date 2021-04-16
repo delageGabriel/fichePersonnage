@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace fichePersonnage
 {
@@ -12,8 +13,7 @@ namespace fichePersonnage
         // Attributs
         private string backGround;
         private string préposition;
-        private ClasseIni fichierIniPays = new ClasseIni("./fichePersonnage/fichiersIni/pays.ini");
-        private List<string> listBackGround = new List<string>();
+        readonly ClasseIni fichierIniPays = new ClasseIni(Path.GetFullPath("fichiersIni/pays.ini"));
 
         // Constructeur
         public BackGround(string backGround)
