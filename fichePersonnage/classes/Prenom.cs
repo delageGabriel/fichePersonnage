@@ -50,6 +50,33 @@ namespace fichePersonnage
             listPrenom.Clear();            
         }
 
+        public string PrenomAleatoireGarcon()
+        {
+            bool play = true;
+            Random nbRandom = new Random();
+            string prenomRetourner;
+            int i = 1;
+            List<string> listPrenom = new List<string>();
+            string fmt = "000.##";
+            while (play)
+            {
+                string repertoireALire = fichierIni.LireIni("PRENOM GARCON", "NBPrenom" + i.ToString(fmt));
+                string nouveauPrenom = repertoireALire;
+                listPrenom.Add(nouveauPrenom);
+                i++;
+
+                if (repertoireALire == null)
+                {
+                    play = false;
+                }
+            }
+
+            int nbAleatoire = nbRandom.Next((listPrenom.Count));
+            prenomRetourner = listPrenom[nbAleatoire];
+            listPrenom.Clear();
+            return prenomRetourner;
+        }
+
         public void PrenomAleatoireFille(TextBox unPrenom)
         {
             bool play = true;
@@ -76,6 +103,30 @@ namespace fichePersonnage
             listPrenom.Clear();
         }
 
+        public string PrenomAleatoireFille()
+        {
+            bool play = true;
+            Random nbRandom = new Random();
+            string prenomRetourner;
+            int i = 1;
+            List<string> listPrenom = new List<string>();
+            string fmt = "000.##";
+            while (play)
+            {
+                string repertoireALire = fichierIni.LireIni("PRENOM FILLE", "NBPrenom" + i.ToString(fmt));
+                string nouveauPrenom = repertoireALire;
+                listPrenom.Add(nouveauPrenom);
+                i++;
+                if (repertoireALire == null)
+                {
+                    play = false;
+                }
+            }
 
+            int nbAleatoire = nbRandom.Next((listPrenom.Count));
+            prenomRetourner = listPrenom[nbAleatoire];
+            listPrenom.Clear();
+            return prenomRetourner;
+        }
     }
 }

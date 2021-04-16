@@ -253,7 +253,7 @@ namespace fichePersonnage
             listPasse.Add("Plus jeune, elle fit une formation dans un couvent pour rester chaste et pure.");
             listPasse.Add("Plus jeune, elle faisait déjà des petits boulots à côté des études pour aider sa famille pauvre.");
             listPasse.Add("Plus jeune, elle faisait parti d'une association sportive où il y remporta quelques médailles dont elle est très fier.");
-            listPasse.Add("Plus jeune, elle se perdit en forêt, ce qui lui causa un traumatisme profond, depuis elle a peur de s'aventurer seul dans des endroits sans aucune présence");
+            listPasse.Add("Plus jeune, elle se perdit en forêt, ce qui lui causa un traumatisme profond, depuis elle a peur de s'aventurer seul dans des endroits sans aucune présence.");
             listPasse.Add("Plus jeune, elle resta impassible devant un tigre qui rugit devant elle dans un zoo, elle est surnommée depuis Lily la tigresse.");
             listPasse.Add("Plus jeune, elle était en surpoids à cause d'une alimentation à base de bonbons et de chips, mais elle réussit à se reprendre en main.");
             listPasse.Add("Plus jeune, elle n'avait pas ou peu d'amis, ce qui lui valut le fait d'être la tête de Turc de groupe. Mais elle surmonta ces harcèlements.");
@@ -297,10 +297,13 @@ namespace fichePersonnage
         /// <returns></returns>
         public string UnCompagnonAleatoireFille(List<string> listDeCompagnons, string unCompagnon)
         {
+            Prenom prenomPartenaire = new Prenom("Tarzan");
             Random nbAleatoire = new Random();
+            string prenomAmoureux = prenomPartenaire.PrenomAleatoireGarcon();
+            string prenomPote = prenomPartenaire.PrenomAleatoireFille();
             string compagnonFinal = "";
-            listDeCompagnons.Add("Elle est follement amoureuse du jeune Kévin le chad, et cherche à lui parler en secret.");
-            listDeCompagnons.Add("Elle sait qu'elle peut toujours compter sur sa meilleure ami Chouffine, qui l'aidera peu importe la situation.");
+            listDeCompagnons.Add($"Elle est follement amoureuse du jeune {prenomAmoureux} le chad, et cherche à lui parler en secret.");
+            listDeCompagnons.Add($"Elle sait qu'elle peut toujours compter sur sa meilleure ami {prenomPote}, qui l'aidera peu importe la situation.");
             listDeCompagnons.Add("Elle sait qu'elle peut toujours faire appel à sa famille en cas de pépin.");
 
             int nbRandomCompagnons = nbAleatoire.Next(listDeCompagnons.Count);
@@ -318,10 +321,15 @@ namespace fichePersonnage
         /// <returns></returns>
         public string UnCompagnonAleatoireGarcon(List<string> listDeCompagnons, string unCompagnon)
         {
+            Prenom prenomPartenaire = new Prenom("Jane");
             Random nbAleatoire = new Random();
+            string prenomPote = "";
+            string prenomAmourette = "";
+            prenomPote = prenomPartenaire.PrenomAleatoireGarcon();
+            prenomAmourette = prenomPartenaire.PrenomAleatoireFille();
             string compagnonFinal = "";
-            listDeCompagnons.Add("Il est follement amoureux de la jeune Béatrice sa voisine, et serait prêt à tout pour l'épouser.");
-            listDeCompagnons.Add("Il sait qu'il peut toujours compter sur son meilleur ami Jean-René, qui l'aidera peu importe la situation.");
+            listDeCompagnons.Add($"Il est follement amoureux de la jeune {prenomAmourette} sa voisine, et serait prêt à tout pour l'épouser.");
+            listDeCompagnons.Add($"Il sait qu'il peut toujours compter sur son meilleur ami {prenomPote}, qui l'aidera peu importe la situation.");
             listDeCompagnons.Add("Il sait qu'il peut toujours faire appel à sa famille en cas de pépin.");
 
             int nbRandomCompagnons = nbAleatoire.Next(listDeCompagnons.Count);
@@ -357,7 +365,7 @@ namespace fichePersonnage
             string preposition = "";
             string prepositionPlusPays = PaysEtPrepositionAleatoire(listPaysBackground, preposition, paysAleatoire);
             string backgroundHomme = $"{prenom} {nom} est un homme originaire {prepositionPlusPays} où il y a vécu toute son enfance. Depuis tout petit c'est un grand " +
-                $"passionné par {unePassionPlusUnAvenir} {unPasseSombre}. {compagnonUltime}";
+                $"passionné par {unePassionPlusUnAvenir} {unPasseSombre} {compagnonUltime}";
             laRichTexBox.Text = backgroundHomme;
         }
 
@@ -387,7 +395,7 @@ namespace fichePersonnage
             string preposition = "";
             string prepositionPlusPays = PaysEtPrepositionAleatoire(listPaysBackground, preposition, paysAleatoire);
             string backgroundFemme = $"{prenom} {nom} est une femme originaire {prepositionPlusPays} où elle y a vécu toute son enfance. Depuis toute petite c'est une grande " +
-                $"passionnée par {unePassionPlusUnAvenir} {unPasseSombre}. {compagnonUltime}";
+                $"passionnée par {unePassionPlusUnAvenir} {unPasseSombre} {compagnonUltime}";
             laRichTexBox.Text = backgroundFemme;
         }
     }

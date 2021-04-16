@@ -282,22 +282,34 @@ namespace fichePersonnage
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             TextRange rangeNomPrenom = paragraphe.AppendText(txtNom.Text + " " + txtPrenom.Text);
             rangeNomPrenom.CharacterFormat.FontSize = 36;
+            rangeNomPrenom.CharacterFormat.TextColor = Color.Red;
             paragraphe = section.AddParagraph();
 
             TextRange rangeSexe = paragraphe.AppendText("Sexe : " + sexe);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
-            rangeSexe.CharacterFormat.FontSize = 32;
+            rangeSexe.CharacterFormat.FontSize = 24;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeAge = paragraphe.AppendText("Âge : " + txtAge.Text + " ans");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeAge.CharacterFormat.FontSize = 24;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeRace = paragraphe.AppendText("Race : " + txtRace.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeRace.CharacterFormat.FontSize = 24;
             paragraphe = section.AddParagraph();
 
             DocPicture imageARepositionner = paragraphe.AppendPicture(picture);
             imageARepositionner.TextWrappingStyle = TextWrappingStyle.Square;
-            imageARepositionner.HorizontalPosition = 300.0F;
-            imageARepositionner.VerticalPosition = -100.0F;
+            imageARepositionner.HorizontalPosition = 250.0F;
+            imageARepositionner.VerticalPosition = -200.0F;
             paragraphe = section.AddParagraph();
 
             TextRange rangeIntituleHistoire = paragraphe.AppendText("Histoire :");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangeIntituleHistoire.CharacterFormat.FontSize = 28;
+            rangeIntituleHistoire.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
             paragraphe = section.AddParagraph();
 
             paragraphe.AppendText(rtbHistoire.Text);
@@ -308,16 +320,19 @@ namespace fichePersonnage
             TextRange rangeCaracteristiques = paragraphe.AppendText("Caractéristiques :");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangeCaracteristiques.CharacterFormat.FontSize = 28;
+            rangeCaracteristiques.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
             paragraphe = section.AddParagraph();
 
             TextRange rangePointsDeVie = paragraphe.AppendText("Points de vies : " + txtPV.Text);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangePointsDeVie.CharacterFormat.FontSize = 19;
+            rangePointsDeVie.CharacterFormat.TextColor = Color.Green;
             paragraphe = section.AddParagraph();
 
             TextRange rangePointDeMana = paragraphe.AppendText("Points de Mana : " + txtPM.Text);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangePointDeMana.CharacterFormat.FontSize = 19;
+            rangePointDeMana.CharacterFormat.TextColor = Color.Blue;
             paragraphe = section.AddParagraph();
 
             TextRange rangePhysique = paragraphe.AppendText("Physique : " + txtPhysique.Text);
@@ -393,6 +408,21 @@ namespace fichePersonnage
         private void btnRepartition_Click(object sender, EventArgs e)
         {
             caracteristiques.RepartitionPointsPVPMAleatoire(txtNnPointRepartir, txtPV, txtPM);
+        }
+
+        private void btnRepartitionPhyMenSoc_Click(object sender, EventArgs e)
+        {
+            caracteristiques.RepartitionCaracteristiquePrincipale(txtNbRepartitionPhySocMen, txtPhysique, txtSocial, txtMental);
+        }
+
+        private void txtRace_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHistoire_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

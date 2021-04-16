@@ -529,5 +529,152 @@ namespace fichePersonnage
                 MessageBox.Show(e.Message);
             }
         }
+
+        public void RepartitionCaracteristiquePrincipale(TextBox txtBoxPoints, TextBox txtPhy, TextBox txtSoc, TextBox txtMen)
+        {
+            try
+            {
+                int nbPointsARepartir;
+                int dividendeNbPoints;
+                int nbPhy;
+                int nbSoc;
+                int nbMen;
+                int uneChanceSurTrois;
+                Random chiffreAleatoireSurTrois = new Random();
+                Random chiffreRandom = new Random();
+                int nbChiffreRandom = chiffreRandom.Next(4);
+
+                // nbChiffreRandom = 0
+                if(nbChiffreRandom == 0)
+                {
+                    nbPointsARepartir = GetNbPointsARepartir(txtBoxPoints);
+                    dividendeNbPoints = nbPointsARepartir / 3;
+                    nbPhy = dividendeNbPoints;
+                    nbSoc = dividendeNbPoints;
+                    nbMen = dividendeNbPoints;
+                    txtPhy.Text = nbPhy.ToString();
+                    txtSoc.Text = nbSoc.ToString();
+                    txtMen.Text = nbMen.ToString();
+                }
+
+                // nbChiffreRandom = 1
+                if(nbChiffreRandom == 1)
+                {
+                    nbPointsARepartir = GetNbPointsARepartir(txtBoxPoints);
+                    uneChanceSurTrois = chiffreAleatoireSurTrois.Next(3);
+                    dividendeNbPoints = nbPointsARepartir / 3;
+                    if(uneChanceSurTrois == 0)
+                    {
+                        nbPhy = dividendeNbPoints + 10;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints - 10;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if(uneChanceSurTrois == 1)
+                    {
+                        nbPhy = dividendeNbPoints - 5;
+                        nbSoc = dividendeNbPoints + 10;
+                        nbMen = dividendeNbPoints - 5;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if(uneChanceSurTrois == 2)
+                    {
+                        nbPhy = dividendeNbPoints - 10;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints + 10;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                }
+
+                // nbChiffreRandom = 2
+                if (nbChiffreRandom == 2)
+                {
+                    nbPointsARepartir = GetNbPointsARepartir(txtBoxPoints);
+                    uneChanceSurTrois = chiffreAleatoireSurTrois.Next(3);
+                    dividendeNbPoints = nbPointsARepartir / 3;
+                    if (uneChanceSurTrois == 0)
+                    {
+                        nbPhy = dividendeNbPoints + 20;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints - 20;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if (uneChanceSurTrois == 1)
+                    {
+                        nbPhy = dividendeNbPoints - 10;
+                        nbSoc = dividendeNbPoints + 20;
+                        nbMen = dividendeNbPoints - 10;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if (uneChanceSurTrois == 2)
+                    {
+                        nbPhy = dividendeNbPoints - 20;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints + 20;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                }
+
+                // nbChiffreRandom = 3
+                if (nbChiffreRandom == 3)
+                {
+                    nbPointsARepartir = GetNbPointsARepartir(txtBoxPoints);
+                    uneChanceSurTrois = chiffreAleatoireSurTrois.Next(3);
+                    dividendeNbPoints = nbPointsARepartir / 3;
+                    if (uneChanceSurTrois == 0)
+                    {
+                        nbPhy = dividendeNbPoints + 30;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints - 30;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if (uneChanceSurTrois == 1)
+                    {
+                        nbPhy = dividendeNbPoints - 15;
+                        nbSoc = dividendeNbPoints + 30;
+                        nbMen = dividendeNbPoints - 15;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                    else if (uneChanceSurTrois == 2)
+                    {
+                        nbPhy = dividendeNbPoints - 30;
+                        nbSoc = dividendeNbPoints;
+                        nbMen = dividendeNbPoints + 30;
+
+                        txtPhy.Text = nbPhy.ToString();
+                        txtSoc.Text = nbSoc.ToString();
+                        txtMen.Text = nbMen.ToString();
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
     }
 }

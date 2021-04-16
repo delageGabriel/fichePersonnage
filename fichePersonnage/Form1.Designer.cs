@@ -59,12 +59,19 @@
             this.lblPointARepartir = new System.Windows.Forms.Label();
             this.btnRepartition = new System.Windows.Forms.Button();
             this.txtNnPointRepartir = new System.Windows.Forms.TextBox();
+            this.lblNbRepartitionPhySocMen = new System.Windows.Forms.Label();
+            this.txtNbRepartitionPhySocMen = new System.Windows.Forms.TextBox();
+            this.btnRepartitionPhyMenSoc = new System.Windows.Forms.Button();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblRace = new System.Windows.Forms.Label();
+            this.txtRace = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(28, 31);
+            this.txtNom.Location = new System.Drawing.Point(24, 66);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 0;
@@ -73,7 +80,7 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(63, 15);
+            this.lblNom.Location = new System.Drawing.Point(59, 50);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(29, 13);
             this.lblNom.TabIndex = 1;
@@ -81,7 +88,7 @@
             // 
             // btnGenerNom
             // 
-            this.btnGenerNom.Location = new System.Drawing.Point(28, 57);
+            this.btnGenerNom.Location = new System.Drawing.Point(24, 92);
             this.btnGenerNom.Name = "btnGenerNom";
             this.btnGenerNom.Size = new System.Drawing.Size(98, 23);
             this.btnGenerNom.TabIndex = 2;
@@ -92,7 +99,7 @@
             // txtPrenom
             // 
             this.txtPrenom.Enabled = false;
-            this.txtPrenom.Location = new System.Drawing.Point(185, 31);
+            this.txtPrenom.Location = new System.Drawing.Point(181, 66);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 3;
@@ -101,7 +108,7 @@
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(215, 15);
+            this.lblPrenom.Location = new System.Drawing.Point(211, 50);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(43, 13);
             this.lblPrenom.TabIndex = 4;
@@ -110,7 +117,7 @@
             // btnGenerPrenom
             // 
             this.btnGenerPrenom.Enabled = false;
-            this.btnGenerPrenom.Location = new System.Drawing.Point(185, 57);
+            this.btnGenerPrenom.Location = new System.Drawing.Point(181, 92);
             this.btnGenerPrenom.Name = "btnGenerPrenom";
             this.btnGenerPrenom.Size = new System.Drawing.Size(100, 23);
             this.btnGenerPrenom.TabIndex = 5;
@@ -121,7 +128,7 @@
             // rdbHomme
             // 
             this.rdbHomme.AutoSize = true;
-            this.rdbHomme.Location = new System.Drawing.Point(28, 141);
+            this.rdbHomme.Location = new System.Drawing.Point(24, 176);
             this.rdbHomme.Name = "rdbHomme";
             this.rdbHomme.Size = new System.Drawing.Size(61, 17);
             this.rdbHomme.TabIndex = 8;
@@ -133,7 +140,7 @@
             // rdbFemme
             // 
             this.rdbFemme.AutoSize = true;
-            this.rdbFemme.Location = new System.Drawing.Point(28, 175);
+            this.rdbFemme.Location = new System.Drawing.Point(24, 210);
             this.rdbFemme.Name = "rdbFemme";
             this.rdbFemme.Size = new System.Drawing.Size(59, 17);
             this.rdbFemme.TabIndex = 9;
@@ -145,7 +152,7 @@
             // lblSexe
             // 
             this.lblSexe.AutoSize = true;
-            this.lblSexe.Location = new System.Drawing.Point(63, 115);
+            this.lblSexe.Location = new System.Drawing.Point(59, 150);
             this.lblSexe.Name = "lblSexe";
             this.lblSexe.Size = new System.Drawing.Size(31, 13);
             this.lblSexe.TabIndex = 10;
@@ -153,7 +160,7 @@
             // 
             // rtbHistoire
             // 
-            this.rtbHistoire.Location = new System.Drawing.Point(28, 270);
+            this.rtbHistoire.Location = new System.Drawing.Point(60, 421);
             this.rtbHistoire.MaxLength = 500;
             this.rtbHistoire.Name = "rtbHistoire";
             this.rtbHistoire.Size = new System.Drawing.Size(505, 180);
@@ -164,15 +171,16 @@
             // lblHistoire
             // 
             this.lblHistoire.AutoSize = true;
-            this.lblHistoire.Location = new System.Drawing.Point(86, 242);
+            this.lblHistoire.Location = new System.Drawing.Point(85, 405);
             this.lblHistoire.Name = "lblHistoire";
             this.lblHistoire.Size = new System.Drawing.Size(42, 13);
             this.lblHistoire.TabIndex = 12;
             this.lblHistoire.Text = "Histoire";
+            this.lblHistoire.Click += new System.EventHandler(this.lblHistoire_Click);
             // 
             // btnGenerHistoire
             // 
-            this.btnGenerHistoire.Location = new System.Drawing.Point(347, 456);
+            this.btnGenerHistoire.Location = new System.Drawing.Point(395, 607);
             this.btnGenerHistoire.Name = "btnGenerHistoire";
             this.btnGenerHistoire.Size = new System.Drawing.Size(159, 23);
             this.btnGenerHistoire.TabIndex = 13;
@@ -183,7 +191,7 @@
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(84, 651);
+            this.lblPhysique.Location = new System.Drawing.Point(116, 836);
             this.lblPhysique.Name = "lblPhysique";
             this.lblPhysique.Size = new System.Drawing.Size(50, 13);
             this.lblPhysique.TabIndex = 16;
@@ -192,7 +200,7 @@
             // lblSocial
             // 
             this.lblSocial.AutoSize = true;
-            this.lblSocial.Location = new System.Drawing.Point(269, 650);
+            this.lblSocial.Location = new System.Drawing.Point(301, 835);
             this.lblSocial.Name = "lblSocial";
             this.lblSocial.Size = new System.Drawing.Size(36, 13);
             this.lblSocial.TabIndex = 17;
@@ -201,7 +209,7 @@
             // lblMental
             // 
             this.lblMental.AutoSize = true;
-            this.lblMental.Location = new System.Drawing.Point(442, 649);
+            this.lblMental.Location = new System.Drawing.Point(474, 834);
             this.lblMental.Name = "lblMental";
             this.lblMental.Size = new System.Drawing.Size(39, 13);
             this.lblMental.TabIndex = 18;
@@ -209,7 +217,7 @@
             // 
             // txtPhysique
             // 
-            this.txtPhysique.Location = new System.Drawing.Point(56, 667);
+            this.txtPhysique.Location = new System.Drawing.Point(88, 852);
             this.txtPhysique.Name = "txtPhysique";
             this.txtPhysique.Size = new System.Drawing.Size(100, 20);
             this.txtPhysique.TabIndex = 19;
@@ -218,7 +226,7 @@
             // 
             // txtSocial
             // 
-            this.txtSocial.Location = new System.Drawing.Point(237, 667);
+            this.txtSocial.Location = new System.Drawing.Point(269, 852);
             this.txtSocial.Name = "txtSocial";
             this.txtSocial.Size = new System.Drawing.Size(100, 20);
             this.txtSocial.TabIndex = 20;
@@ -227,7 +235,7 @@
             // 
             // txtMental
             // 
-            this.txtMental.Location = new System.Drawing.Point(409, 667);
+            this.txtMental.Location = new System.Drawing.Point(441, 852);
             this.txtMental.Name = "txtMental";
             this.txtMental.Size = new System.Drawing.Size(100, 20);
             this.txtMental.TabIndex = 21;
@@ -237,7 +245,7 @@
             // rdbAutre
             // 
             this.rdbAutre.AutoSize = true;
-            this.rdbAutre.Location = new System.Drawing.Point(185, 141);
+            this.rdbAutre.Location = new System.Drawing.Point(181, 176);
             this.rdbAutre.Name = "rdbAutre";
             this.rdbAutre.Size = new System.Drawing.Size(100, 17);
             this.rdbAutre.TabIndex = 22;
@@ -249,7 +257,7 @@
             // txtAutre
             // 
             this.txtAutre.Enabled = false;
-            this.txtAutre.Location = new System.Drawing.Point(185, 172);
+            this.txtAutre.Location = new System.Drawing.Point(181, 207);
             this.txtAutre.Name = "txtAutre";
             this.txtAutre.Size = new System.Drawing.Size(100, 20);
             this.txtAutre.TabIndex = 23;
@@ -257,7 +265,7 @@
             // lblLimiteCaractere
             // 
             this.lblLimiteCaractere.AutoSize = true;
-            this.lblLimiteCaractere.Location = new System.Drawing.Point(49, 456);
+            this.lblLimiteCaractere.Location = new System.Drawing.Point(81, 607);
             this.lblLimiteCaractere.Name = "lblLimiteCaractere";
             this.lblLimiteCaractere.Size = new System.Drawing.Size(125, 13);
             this.lblLimiteCaractere.TabIndex = 43;
@@ -265,7 +273,7 @@
             // 
             // btnSoumettre
             // 
-            this.btnSoumettre.Location = new System.Drawing.Point(248, 712);
+            this.btnSoumettre.Location = new System.Drawing.Point(280, 897);
             this.btnSoumettre.Name = "btnSoumettre";
             this.btnSoumettre.Size = new System.Drawing.Size(75, 23);
             this.btnSoumettre.TabIndex = 50;
@@ -279,16 +287,16 @@
             this.pteBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pteBox.ErrorImage = null;
             this.pteBox.InitialImage = null;
-            this.pteBox.Location = new System.Drawing.Point(343, 15);
+            this.pteBox.Location = new System.Drawing.Point(320, 35);
             this.pteBox.Name = "pteBox";
-            this.pteBox.Size = new System.Drawing.Size(200, 200);
+            this.pteBox.Size = new System.Drawing.Size(300, 300);
             this.pteBox.TabIndex = 51;
             this.pteBox.TabStop = false;
             this.pteBox.Click += new System.EventHandler(this.pteBox_Click);
             // 
             // btnImporterImage
             // 
-            this.btnImporterImage.Location = new System.Drawing.Point(391, 232);
+            this.btnImporterImage.Location = new System.Drawing.Point(389, 360);
             this.btnImporterImage.Name = "btnImporterImage";
             this.btnImporterImage.Size = new System.Drawing.Size(91, 23);
             this.btnImporterImage.TabIndex = 52;
@@ -298,7 +306,7 @@
             // 
             // txtPV
             // 
-            this.txtPV.Location = new System.Drawing.Point(26, 498);
+            this.txtPV.Location = new System.Drawing.Point(438, 708);
             this.txtPV.Name = "txtPV";
             this.txtPV.Size = new System.Drawing.Size(100, 20);
             this.txtPV.TabIndex = 53;
@@ -308,7 +316,7 @@
             // 
             // txtPM
             // 
-            this.txtPM.Location = new System.Drawing.Point(26, 557);
+            this.txtPM.Location = new System.Drawing.Point(76, 708);
             this.txtPM.Name = "txtPM";
             this.txtPM.Size = new System.Drawing.Size(100, 20);
             this.txtPM.TabIndex = 54;
@@ -317,7 +325,7 @@
             // lblPV
             // 
             this.lblPV.AutoSize = true;
-            this.lblPV.Location = new System.Drawing.Point(41, 482);
+            this.lblPV.Location = new System.Drawing.Point(458, 692);
             this.lblPV.Name = "lblPV";
             this.lblPV.Size = new System.Drawing.Size(68, 13);
             this.lblPV.TabIndex = 55;
@@ -326,7 +334,7 @@
             // lblPM
             // 
             this.lblPM.AutoSize = true;
-            this.lblPM.Location = new System.Drawing.Point(42, 541);
+            this.lblPM.Location = new System.Drawing.Point(85, 692);
             this.lblPM.Name = "lblPM";
             this.lblPM.Size = new System.Drawing.Size(81, 13);
             this.lblPM.TabIndex = 56;
@@ -335,7 +343,7 @@
             // lblPointARepartir
             // 
             this.lblPointARepartir.AutoSize = true;
-            this.lblPointARepartir.Location = new System.Drawing.Point(171, 482);
+            this.lblPointARepartir.Location = new System.Drawing.Point(248, 645);
             this.lblPointARepartir.Name = "lblPointARepartir";
             this.lblPointARepartir.Size = new System.Drawing.Size(134, 13);
             this.lblPointARepartir.TabIndex = 57;
@@ -343,7 +351,7 @@
             // 
             // btnRepartition
             // 
-            this.btnRepartition.Location = new System.Drawing.Point(164, 554);
+            this.btnRepartition.Location = new System.Drawing.Point(251, 705);
             this.btnRepartition.Name = "btnRepartition";
             this.btnRepartition.Size = new System.Drawing.Size(130, 23);
             this.btnRepartition.TabIndex = 58;
@@ -353,18 +361,86 @@
             // 
             // txtNnPointRepartir
             // 
-            this.txtNnPointRepartir.Location = new System.Drawing.Point(185, 498);
+            this.txtNnPointRepartir.Location = new System.Drawing.Point(269, 661);
             this.txtNnPointRepartir.Name = "txtNnPointRepartir";
             this.txtNnPointRepartir.Size = new System.Drawing.Size(100, 20);
             this.txtNnPointRepartir.TabIndex = 59;
             this.txtNnPointRepartir.TextChanged += new System.EventHandler(this.txtNnPointRepartir_TextChanged);
             this.txtNnPointRepartir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNnPointRepartir_KeyPress);
             // 
+            // lblNbRepartitionPhySocMen
+            // 
+            this.lblNbRepartitionPhySocMen.AutoSize = true;
+            this.lblNbRepartitionPhySocMen.Location = new System.Drawing.Point(165, 772);
+            this.lblNbRepartitionPhySocMen.Name = "lblNbRepartitionPhySocMen";
+            this.lblNbRepartitionPhySocMen.Size = new System.Drawing.Size(134, 13);
+            this.lblNbRepartitionPhySocMen.TabIndex = 60;
+            this.lblNbRepartitionPhySocMen.Text = "Nombre de points à répartir";
+            // 
+            // txtNbRepartitionPhySocMen
+            // 
+            this.txtNbRepartitionPhySocMen.Location = new System.Drawing.Point(178, 798);
+            this.txtNbRepartitionPhySocMen.Name = "txtNbRepartitionPhySocMen";
+            this.txtNbRepartitionPhySocMen.Size = new System.Drawing.Size(100, 20);
+            this.txtNbRepartitionPhySocMen.TabIndex = 61;
+            // 
+            // btnRepartitionPhyMenSoc
+            // 
+            this.btnRepartitionPhyMenSoc.Location = new System.Drawing.Point(357, 796);
+            this.btnRepartitionPhyMenSoc.Name = "btnRepartitionPhyMenSoc";
+            this.btnRepartitionPhyMenSoc.Size = new System.Drawing.Size(128, 23);
+            this.btnRepartitionPhyMenSoc.TabIndex = 62;
+            this.btnRepartitionPhyMenSoc.Text = "Répartition automatique";
+            this.btnRepartitionPhyMenSoc.UseVisualStyleBackColor = true;
+            this.btnRepartitionPhyMenSoc.Click += new System.EventHandler(this.btnRepartitionPhyMenSoc_Click);
+            // 
+            // txtAge
+            // 
+            this.txtAge.Location = new System.Drawing.Point(22, 265);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(100, 20);
+            this.txtAge.TabIndex = 63;
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(57, 249);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(26, 13);
+            this.lblAge.TabIndex = 64;
+            this.lblAge.Text = "Âge";
+            // 
+            // lblRace
+            // 
+            this.lblRace.AutoSize = true;
+            this.lblRace.Location = new System.Drawing.Point(52, 299);
+            this.lblRace.Name = "lblRace";
+            this.lblRace.Size = new System.Drawing.Size(33, 13);
+            this.lblRace.TabIndex = 65;
+            this.lblRace.Text = "Race";
+            // 
+            // txtRace
+            // 
+            this.txtRace.AccessibleName = "";
+            this.txtRace.Location = new System.Drawing.Point(22, 315);
+            this.txtRace.Name = "txtRace";
+            this.txtRace.Size = new System.Drawing.Size(100, 20);
+            this.txtRace.TabIndex = 66;
+            this.txtRace.Text = "Humain";
+            this.txtRace.TextChanged += new System.EventHandler(this.txtRace_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 759);
+            this.ClientSize = new System.Drawing.Size(645, 970);
+            this.Controls.Add(this.txtRace);
+            this.Controls.Add(this.lblRace);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.btnRepartitionPhyMenSoc);
+            this.Controls.Add(this.txtNbRepartitionPhySocMen);
+            this.Controls.Add(this.lblNbRepartitionPhySocMen);
             this.Controls.Add(this.txtNnPointRepartir);
             this.Controls.Add(this.btnRepartition);
             this.Controls.Add(this.lblPointARepartir);
@@ -438,6 +514,13 @@
         private System.Windows.Forms.Label lblPointARepartir;
         private System.Windows.Forms.Button btnRepartition;
         private System.Windows.Forms.TextBox txtNnPointRepartir;
+        private System.Windows.Forms.Label lblNbRepartitionPhySocMen;
+        private System.Windows.Forms.TextBox txtNbRepartitionPhySocMen;
+        private System.Windows.Forms.Button btnRepartitionPhyMenSoc;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblRace;
+        private System.Windows.Forms.TextBox txtRace;
     }
 }
 

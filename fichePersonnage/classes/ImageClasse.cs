@@ -21,7 +21,7 @@ namespace fichePersonnage
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 Bitmap imageRecuperee = new Bitmap(opf.FileName);
-                Bitmap imageRedimensionner = new Bitmap(imageRecuperee, new Size(200, 200));
+                Bitmap imageRedimensionner = new Bitmap(imageRecuperee, new Size(300,300));
                 uneImage = imageRedimensionner;
             }
             return uneImage;
