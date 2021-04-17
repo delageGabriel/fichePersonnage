@@ -74,6 +74,12 @@
             this.btnGenereLangues = new System.Windows.Forms.Button();
             this.lblNiveau = new System.Windows.Forms.Label();
             this.txtNiveau = new System.Windows.Forms.TextBox();
+            this.lblCompetences = new System.Windows.Forms.Label();
+            this.txtCompetences = new System.Windows.Forms.TextBox();
+            this.lblDons = new System.Windows.Forms.Label();
+            this.txtDons = new System.Windows.Forms.TextBox();
+            this.btnCompetences = new System.Windows.Forms.Button();
+            this.btnDons = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,7 +286,7 @@
             // 
             // btnSoumettre
             // 
-            this.btnSoumettre.Location = new System.Drawing.Point(658, 868);
+            this.btnSoumettre.Location = new System.Drawing.Point(687, 191);
             this.btnSoumettre.Name = "btnSoumettre";
             this.btnSoumettre.Size = new System.Drawing.Size(227, 129);
             this.btnSoumettre.TabIndex = 50;
@@ -505,11 +511,70 @@
             this.txtNiveau.TabIndex = 74;
             this.txtNiveau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNiveau_KeyPress);
             // 
+            // lblCompetences
+            // 
+            this.lblCompetences.AutoSize = true;
+            this.lblCompetences.Location = new System.Drawing.Point(671, 50);
+            this.lblCompetences.Name = "lblCompetences";
+            this.lblCompetences.Size = new System.Drawing.Size(72, 13);
+            this.lblCompetences.TabIndex = 75;
+            this.lblCompetences.Text = "Compétences";
+            // 
+            // txtCompetences
+            // 
+            this.txtCompetences.Location = new System.Drawing.Point(640, 66);
+            this.txtCompetences.Multiline = true;
+            this.txtCompetences.Name = "txtCompetences";
+            this.txtCompetences.Size = new System.Drawing.Size(132, 49);
+            this.txtCompetences.TabIndex = 76;
+            // 
+            // lblDons
+            // 
+            this.lblDons.AutoSize = true;
+            this.lblDons.Location = new System.Drawing.Point(882, 50);
+            this.lblDons.Name = "lblDons";
+            this.lblDons.Size = new System.Drawing.Size(32, 13);
+            this.lblDons.TabIndex = 77;
+            this.lblDons.Text = "Dons";
+            // 
+            // txtDons
+            // 
+            this.txtDons.Location = new System.Drawing.Point(831, 67);
+            this.txtDons.Multiline = true;
+            this.txtDons.Name = "txtDons";
+            this.txtDons.Size = new System.Drawing.Size(129, 48);
+            this.txtDons.TabIndex = 78;
+            // 
+            // btnCompetences
+            // 
+            this.btnCompetences.Location = new System.Drawing.Point(640, 121);
+            this.btnCompetences.Name = "btnCompetences";
+            this.btnCompetences.Size = new System.Drawing.Size(132, 23);
+            this.btnCompetences.TabIndex = 79;
+            this.btnCompetences.Text = "Générer Compétences";
+            this.btnCompetences.UseVisualStyleBackColor = true;
+            this.btnCompetences.Click += new System.EventHandler(this.btnCompetences_Click);
+            // 
+            // btnDons
+            // 
+            this.btnDons.Location = new System.Drawing.Point(848, 121);
+            this.btnDons.Name = "btnDons";
+            this.btnDons.Size = new System.Drawing.Size(99, 23);
+            this.btnDons.TabIndex = 80;
+            this.btnDons.Text = "Générer Dons";
+            this.btnDons.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 1061);
+            this.ClientSize = new System.Drawing.Size(996, 1061);
+            this.Controls.Add(this.btnDons);
+            this.Controls.Add(this.btnCompetences);
+            this.Controls.Add(this.txtDons);
+            this.Controls.Add(this.lblDons);
+            this.Controls.Add(this.txtCompetences);
+            this.Controls.Add(this.lblCompetences);
             this.Controls.Add(this.txtNiveau);
             this.Controls.Add(this.lblNiveau);
             this.Controls.Add(this.btnGenereLangues);
@@ -613,6 +678,12 @@
         private System.Windows.Forms.Button btnGenereLangues;
         private System.Windows.Forms.Label lblNiveau;
         private System.Windows.Forms.TextBox txtNiveau;
+        private System.Windows.Forms.Label lblCompetences;
+        private System.Windows.Forms.TextBox txtCompetences;
+        private System.Windows.Forms.Label lblDons;
+        private System.Windows.Forms.TextBox txtDons;
+        private System.Windows.Forms.Button btnCompetences;
+        private System.Windows.Forms.Button btnDons;
     }
 }
 

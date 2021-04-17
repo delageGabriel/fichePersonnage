@@ -44,7 +44,7 @@ namespace fichePersonnage
                 }
             }
 
-            int nbAleatoire = nbRandom.Next((listNom.Count));
+            int nbAleatoire = nbRandom.Next(0, (listNom.Count));
             bytes = Encoding.Default.GetBytes(listNom[nbAleatoire]);
             prenomRetourner = Encoding.UTF8.GetString(bytes);
             unNom.Text = prenomRetourner;

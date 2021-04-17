@@ -124,6 +124,7 @@
     <Compile Include="classes\BackGround.cs" />
     <Compile Include="classes\Caracteristiques.cs" />
     <Compile Include="classes\ClasseIni.cs" />
+    <Compile Include="classes\Competences.cs" />
     <Compile Include="classes\ImageClasse.cs" />
     <Compile Include="classes\Langue.cs" />
     <Compile Include="classes\Nom.cs" />

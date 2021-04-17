@@ -37,7 +37,7 @@ namespace fichePersonnage
                         play = false;
                     }
                 }
-                int nbAleatoire = nbRandom.Next((listLangues.Count));
+                int nbAleatoire = nbRandom.Next(0, (listLangues.Count));
                 langueRetourner = listLangues[nbAleatoire];
                 listLangues.Clear();
                 return langueRetourner;

@@ -26,6 +26,7 @@ namespace fichePersonnage
         private Document document;
         private Caracteristiques caracteristiques;
         private Langue uneLangue;
+        private Competences uneCompetence;
         private string laLangue;
         private string cheminTemplate;
         private string cheminSauvegardeDocx;
@@ -42,6 +43,7 @@ namespace fichePersonnage
             caracteristiques = new Caracteristiques();
             laLangue = "Français";
             uneLangue = new Langue();
+            uneCompetence = new Competences();
             cheminTemplate = Path.GetFullPath("template/templateFichePerso.docx");
             cheminSauvegardeDocx = Path.GetFullPath("template/fichePersonnage.docx");
             cheminSauvegardePdf = Path.GetFullPath("template/fichePersonnage.pdf");
@@ -119,6 +121,10 @@ namespace fichePersonnage
             else if (rdbFemme.Checked == true)
             {
                 unBackGround.GenererBackGroundFille(rtbHistoire, txtPrenom, txtNom);
+            }
+            else if (rdbAutre.Checked == true)
+            {
+                unBackGround.GenererBackGroundAutre(rtbHistoire, txtPrenom, txtNom, txtAutre);
             }
         }
 
@@ -376,10 +382,23 @@ namespace fichePersonnage
             rangeLangue.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
             paragraphe = section.AddParagraph();
 
-            paragraphe.AppendText(rtbLangue.Text);
+
+            TextRange rangeLesLangues = paragraphe.AppendText(rtbLangue.Text);
             paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
+            rangeLesLangues.CharacterFormat.FontSize = 20;
             paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
             paragraphe = section.AddParagraph();
+
+            TextRange rangeCompetencesTitre = paragraphe.AppendText("Compétences :");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeCompetencesTitre.CharacterFormat.FontSize = 28;
+            rangeCompetencesTitre.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeLesCompetences = paragraphe.AppendText(txtCompetences.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
+            rangeLesCompetences.CharacterFormat.FontSize = 20;
+            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
 
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
@@ -474,6 +493,11 @@ namespace fichePersonnage
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnCompetences_Click(object sender, EventArgs e)
+        {
+            uneCompetence.TroisCompetencesAleatoire(txtCompetences);
         }
     }
 }
