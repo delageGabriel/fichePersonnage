@@ -66,6 +66,14 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.lblRace = new System.Windows.Forms.Label();
             this.txtRace = new System.Windows.Forms.TextBox();
+            this.lblFormat = new System.Windows.Forms.Label();
+            this.lblClasseMetier = new System.Windows.Forms.Label();
+            this.txtClasseMetier = new System.Windows.Forms.TextBox();
+            this.lblLangues = new System.Windows.Forms.Label();
+            this.rtbLangue = new System.Windows.Forms.RichTextBox();
+            this.btnGenereLangues = new System.Windows.Forms.Button();
+            this.lblNiveau = new System.Windows.Forms.Label();
+            this.txtNiveau = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +106,6 @@
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Enabled = false;
             this.txtPrenom.Location = new System.Drawing.Point(181, 66);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
@@ -273,11 +280,11 @@
             // 
             // btnSoumettre
             // 
-            this.btnSoumettre.Location = new System.Drawing.Point(280, 897);
+            this.btnSoumettre.Location = new System.Drawing.Point(658, 868);
             this.btnSoumettre.Name = "btnSoumettre";
-            this.btnSoumettre.Size = new System.Drawing.Size(75, 23);
+            this.btnSoumettre.Size = new System.Drawing.Size(227, 129);
             this.btnSoumettre.TabIndex = 50;
-            this.btnSoumettre.Text = "Soumettre";
+            this.btnSoumettre.Text = "Soumettre la fiche";
             this.btnSoumettre.UseVisualStyleBackColor = true;
             this.btnSoumettre.Click += new System.EventHandler(this.btnSoumettre_Click);
             // 
@@ -296,7 +303,7 @@
             // 
             // btnImporterImage
             // 
-            this.btnImporterImage.Location = new System.Drawing.Point(389, 360);
+            this.btnImporterImage.Location = new System.Drawing.Point(422, 377);
             this.btnImporterImage.Name = "btnImporterImage";
             this.btnImporterImage.Size = new System.Drawing.Size(91, 23);
             this.btnImporterImage.TabIndex = 52;
@@ -306,7 +313,7 @@
             // 
             // txtPV
             // 
-            this.txtPV.Location = new System.Drawing.Point(438, 708);
+            this.txtPV.Location = new System.Drawing.Point(88, 705);
             this.txtPV.Name = "txtPV";
             this.txtPV.Size = new System.Drawing.Size(100, 20);
             this.txtPV.TabIndex = 53;
@@ -316,7 +323,7 @@
             // 
             // txtPM
             // 
-            this.txtPM.Location = new System.Drawing.Point(76, 708);
+            this.txtPM.Location = new System.Drawing.Point(454, 708);
             this.txtPM.Name = "txtPM";
             this.txtPM.Size = new System.Drawing.Size(100, 20);
             this.txtPM.TabIndex = 54;
@@ -325,7 +332,7 @@
             // lblPV
             // 
             this.lblPV.AutoSize = true;
-            this.lblPV.Location = new System.Drawing.Point(458, 692);
+            this.lblPV.Location = new System.Drawing.Point(108, 689);
             this.lblPV.Name = "lblPV";
             this.lblPV.Size = new System.Drawing.Size(68, 13);
             this.lblPV.TabIndex = 55;
@@ -334,7 +341,7 @@
             // lblPM
             // 
             this.lblPM.AutoSize = true;
-            this.lblPM.Location = new System.Drawing.Point(85, 692);
+            this.lblPM.Location = new System.Drawing.Point(460, 689);
             this.lblPM.Name = "lblPM";
             this.lblPM.Size = new System.Drawing.Size(81, 13);
             this.lblPM.TabIndex = 56;
@@ -429,11 +436,88 @@
             this.txtRace.Text = "Humain";
             this.txtRace.TextChanged += new System.EventHandler(this.txtRace_TextChanged);
             // 
+            // lblFormat
+            // 
+            this.lblFormat.AutoSize = true;
+            this.lblFormat.Location = new System.Drawing.Point(406, 350);
+            this.lblFormat.Name = "lblFormat";
+            this.lblFormat.Size = new System.Drawing.Size(132, 13);
+            this.lblFormat.TabIndex = 67;
+            this.lblFormat.Text = "Image au format 300 * 300";
+            // 
+            // lblClasseMetier
+            // 
+            this.lblClasseMetier.AutoSize = true;
+            this.lblClasseMetier.Location = new System.Drawing.Point(32, 350);
+            this.lblClasseMetier.Name = "lblClasseMetier";
+            this.lblClasseMetier.Size = new System.Drawing.Size(72, 13);
+            this.lblClasseMetier.TabIndex = 68;
+            this.lblClasseMetier.Text = "Classe/Métier";
+            // 
+            // txtClasseMetier
+            // 
+            this.txtClasseMetier.Location = new System.Drawing.Point(22, 366);
+            this.txtClasseMetier.Name = "txtClasseMetier";
+            this.txtClasseMetier.Size = new System.Drawing.Size(100, 20);
+            this.txtClasseMetier.TabIndex = 69;
+            // 
+            // lblLangues
+            // 
+            this.lblLangues.AutoSize = true;
+            this.lblLangues.Location = new System.Drawing.Point(289, 892);
+            this.lblLangues.Name = "lblLangues";
+            this.lblLangues.Size = new System.Drawing.Size(48, 13);
+            this.lblLangues.TabIndex = 70;
+            this.lblLangues.Text = "Langues";
+            // 
+            // rtbLangue
+            // 
+            this.rtbLangue.Location = new System.Drawing.Point(62, 909);
+            this.rtbLangue.Name = "rtbLangue";
+            this.rtbLangue.Size = new System.Drawing.Size(503, 59);
+            this.rtbLangue.TabIndex = 71;
+            this.rtbLangue.Text = "";
+            // 
+            // btnGenereLangues
+            // 
+            this.btnGenereLangues.Location = new System.Drawing.Point(270, 974);
+            this.btnGenereLangues.Name = "btnGenereLangues";
+            this.btnGenereLangues.Size = new System.Drawing.Size(99, 23);
+            this.btnGenereLangues.TabIndex = 72;
+            this.btnGenereLangues.Text = "Générer langue(s)";
+            this.btnGenereLangues.UseVisualStyleBackColor = true;
+            this.btnGenereLangues.Click += new System.EventHandler(this.btnGenereLangues_Click);
+            // 
+            // lblNiveau
+            // 
+            this.lblNiveau.AutoSize = true;
+            this.lblNiveau.Location = new System.Drawing.Point(211, 249);
+            this.lblNiveau.Name = "lblNiveau";
+            this.lblNiveau.Size = new System.Drawing.Size(41, 13);
+            this.lblNiveau.TabIndex = 73;
+            this.lblNiveau.Text = "Niveau";
+            // 
+            // txtNiveau
+            // 
+            this.txtNiveau.Location = new System.Drawing.Point(201, 265);
+            this.txtNiveau.Name = "txtNiveau";
+            this.txtNiveau.Size = new System.Drawing.Size(53, 20);
+            this.txtNiveau.TabIndex = 74;
+            this.txtNiveau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNiveau_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 970);
+            this.ClientSize = new System.Drawing.Size(946, 1061);
+            this.Controls.Add(this.txtNiveau);
+            this.Controls.Add(this.lblNiveau);
+            this.Controls.Add(this.btnGenereLangues);
+            this.Controls.Add(this.rtbLangue);
+            this.Controls.Add(this.lblLangues);
+            this.Controls.Add(this.txtClasseMetier);
+            this.Controls.Add(this.lblClasseMetier);
+            this.Controls.Add(this.lblFormat);
             this.Controls.Add(this.txtRace);
             this.Controls.Add(this.lblRace);
             this.Controls.Add(this.lblAge);
@@ -521,6 +605,14 @@
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblRace;
         private System.Windows.Forms.TextBox txtRace;
+        private System.Windows.Forms.Label lblFormat;
+        private System.Windows.Forms.Label lblClasseMetier;
+        private System.Windows.Forms.TextBox txtClasseMetier;
+        private System.Windows.Forms.Label lblLangues;
+        private System.Windows.Forms.RichTextBox rtbLangue;
+        private System.Windows.Forms.Button btnGenereLangues;
+        private System.Windows.Forms.Label lblNiveau;
+        private System.Windows.Forms.TextBox txtNiveau;
     }
 }
 

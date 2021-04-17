@@ -25,6 +25,8 @@ namespace fichePersonnage
         private BackGround unBackGround;
         private Document document;
         private Caracteristiques caracteristiques;
+        private Langue uneLangue;
+        private string laLangue;
         private string cheminTemplate;
         private string cheminSauvegardeDocx;
         private string cheminSauvegardePdf;
@@ -38,6 +40,8 @@ namespace fichePersonnage
             unBackGround = new BackGround("Ceci est un BackGround");
             document = new Document();
             caracteristiques = new Caracteristiques();
+            laLangue = "Français";
+            uneLangue = new Langue();
             cheminTemplate = Path.GetFullPath("template/templateFichePerso.docx");
             cheminSauvegardeDocx = Path.GetFullPath("template/fichePersonnage.docx");
             cheminSauvegardePdf = Path.GetFullPath("template/fichePersonnage.pdf");
@@ -53,7 +57,6 @@ namespace fichePersonnage
         {
             if (rdbHomme.Checked == true)
             {
-                txtPrenom.Enabled = true;
                 btnGenerPrenom.Enabled = true;
             }
         }
@@ -85,7 +88,6 @@ namespace fichePersonnage
         {
             if (rdbFemme.Checked == true)
             {
-                txtPrenom.Enabled = true;
                 btnGenerPrenom.Enabled = true;
             }
         }
@@ -94,7 +96,6 @@ namespace fichePersonnage
         {
             if (rdbAutre.Checked == true)
             {
-                txtPrenom.Enabled = true;
                 txtAutre.Enabled = true;
                 btnGenerPrenom.Enabled = false;
             }
@@ -282,7 +283,7 @@ namespace fichePersonnage
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             TextRange rangeNomPrenom = paragraphe.AppendText(txtNom.Text + " " + txtPrenom.Text);
             rangeNomPrenom.CharacterFormat.FontSize = 36;
-            rangeNomPrenom.CharacterFormat.TextColor = Color.Red;
+            rangeNomPrenom.CharacterFormat.TextColor = Color.DarkRed;
             paragraphe = section.AddParagraph();
 
             TextRange rangeSexe = paragraphe.AppendText("Sexe : " + sexe);
@@ -300,10 +301,21 @@ namespace fichePersonnage
             rangeRace.CharacterFormat.FontSize = 24;
             paragraphe = section.AddParagraph();
 
+            TextRange rangeClasseMetier = paragraphe.AppendText("Classe : " + txtClasseMetier.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeClasseMetier.CharacterFormat.FontSize = 24;
+            paragraphe = section.AddParagraph();
+
             DocPicture imageARepositionner = paragraphe.AppendPicture(picture);
             imageARepositionner.TextWrappingStyle = TextWrappingStyle.Square;
-            imageARepositionner.HorizontalPosition = 250.0F;
+            imageARepositionner.HorizontalPosition = 200.0F;
             imageARepositionner.VerticalPosition = -200.0F;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeNiveau = paragraphe.AppendText("Niveau " + txtNiveau.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading5);
+            rangeNiveau.CharacterFormat.FontSize = 28;
+            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Center;
             paragraphe = section.AddParagraph();
 
             TextRange rangeIntituleHistoire = paragraphe.AppendText("Histoire :");
@@ -326,26 +338,43 @@ namespace fichePersonnage
             TextRange rangePointsDeVie = paragraphe.AppendText("Points de vies : " + txtPV.Text);
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangePointsDeVie.CharacterFormat.FontSize = 19;
-            rangePointsDeVie.CharacterFormat.TextColor = Color.Green;
-            paragraphe = section.AddParagraph();
-
-            TextRange rangePointDeMana = paragraphe.AppendText("Points de Mana : " + txtPM.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            TextRange rangePointDeMana = paragraphe.AppendText("                 Points de Mana : " + txtPM.Text);
             rangePointDeMana.CharacterFormat.FontSize = 19;
-            rangePointDeMana.CharacterFormat.TextColor = Color.Blue;
             paragraphe = section.AddParagraph();
 
-            TextRange rangePhysique = paragraphe.AppendText("Physique : " + txtPhysique.Text);
+            TextRange rangePhysique = paragraphe.AppendText("Physique");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangePhysique.CharacterFormat.FontSize = 20;
-            paragraphe = section.AddParagraph();
-            TextRange rangeSocial = paragraphe.AppendText("Social : " + txtSocial.Text);
+            TextRange rangeSocial = paragraphe.AppendText("                              Social");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangeSocial.CharacterFormat.FontSize = 20;
-            paragraphe = section.AddParagraph();
-            TextRange rangeMental = paragraphe.AppendText("Mental : " + txtMental.Text);
+            TextRange rangeMental = paragraphe.AppendText("                              Mental");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
             rangeMental.CharacterFormat.FontSize = 20;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangePhysiqueStat = paragraphe.AppendText(txtPhysique.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangePhysiqueStat.CharacterFormat.FontSize = 20;
+            TextRange rangeSocialStat = paragraphe.AppendText($"                                           {txtSocial.Text}");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeSocialStat.CharacterFormat.FontSize = 20;
+            TextRange rangeMentalStat = paragraphe.AppendText($"                                     {txtMental.Text}");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeMentalStat.CharacterFormat.FontSize = 20;
+            paragraphe.Format.BeforeSpacing = 30;
+            paragraphe.Format.AfterSpacing = 30;
+            paragraphe = section.AddParagraph();
+
+            TextRange rangeLangue = paragraphe.AppendText("Langue(s) :");
+            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+            rangeLangue.CharacterFormat.FontSize = 28;
+            rangeLangue.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
+            paragraphe = section.AddParagraph();
+
+            paragraphe.AppendText(rtbLangue.Text);
+            paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
+            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
             paragraphe = section.AddParagraph();
 
             // Enregistrer le fichier doc.  
@@ -423,6 +452,24 @@ namespace fichePersonnage
         private void lblHistoire_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenereLangues_Click(object sender, EventArgs e)
+        {
+            uneLangue.LanguesAleatoire(rtbLangue, txtMental, laLangue);
+        }
+
+        private void txtNiveau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
