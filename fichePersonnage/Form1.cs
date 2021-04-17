@@ -76,6 +76,10 @@ namespace fichePersonnage
             {
                 unPrenom.PrenomAleatoireFille(txtPrenom);
             }
+            else if(rdbAutre.Checked == true)
+            {
+                unPrenom.PrenomAleatoireNeutre(txtPrenom);
+            }
 
         }
 
@@ -97,7 +101,7 @@ namespace fichePersonnage
             if (rdbAutre.Checked == true)
             {
                 txtAutre.Enabled = true;
-                btnGenerPrenom.Enabled = false;
+                btnGenerPrenom.Enabled = true;
             }
         }
 

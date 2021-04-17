@@ -77,6 +77,32 @@ namespace fichePersonnage
             return prenomRetourner;
         }
 
+        public void PrenomAleatoireNeutre(TextBox unPrenom)
+        {
+            bool play = true;
+            Random nbRandom = new Random();
+            string prenomRetourner;
+            int i = 1;
+            List<string> listPrenom = new List<string>();
+            string fmt = "000.##";
+            while (play)
+            {
+                string repertoireALire = fichierIni.LireIni("NEUTRE", "NBPrenom" + i.ToString(fmt));
+                string nouveauPrenom = repertoireALire;
+                listPrenom.Add(nouveauPrenom);
+                i++;
+                if (repertoireALire == null)
+                {
+                    play = false;
+                }
+            }
+
+            int nbAleatoire = nbRandom.Next((listPrenom.Count));
+            prenomRetourner = listPrenom[nbAleatoire];
+            unPrenom.Text = prenomRetourner;
+            listPrenom.Clear();
+        }
+
         public void PrenomAleatoireFille(TextBox unPrenom)
         {
             bool play = true;

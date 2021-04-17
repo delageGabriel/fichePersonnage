@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="fichePersonnage.exe" size="46088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="fichePersonnage.exe" size="46600">
       <assemblyIdentity name="fichePersonnage" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9ZwQiBkIG/uOU0q07wly4914gl/UWr7rBYOH1UWw8mQ=</dsig:DigestValue>
+        <dsig:DigestValue>HDLW/fmmJfdGL/X388rtjWBUSODn2DKkvt2i0oR/aYY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
