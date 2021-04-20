@@ -16,7 +16,7 @@ namespace fichePersonnage
             Bitmap uneImage = new Bitmap(Path.GetFullPath("img/sansAvatar.png"));
             OpenFileDialog opf = new OpenFileDialog();
             opf.Title = "Choisissez votre image";
-            opf.Filter = "JPEG|*.jpg|PNG|*.png";
+            opf.Filter = "Tous les formats(*.jpg, *.png, *.bmp)|*.jpg; *.png; *.bmp|JPEG|*.jpg|PNG|*.png|BMP|*.bmp";
 
             if (opf.ShowDialog() == DialogResult.OK)
             {

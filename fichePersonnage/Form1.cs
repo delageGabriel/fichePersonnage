@@ -36,6 +36,7 @@ namespace fichePersonnage
         public Form1()
         {
             InitializeComponent();
+
             unPrenom = new Prenom("Isse");
             unNom = new Nom("La Chancla");
             unBackGround = new BackGround("Ceci est un BackGround");
@@ -52,9 +53,7 @@ namespace fichePersonnage
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbHomme.Checked == true)
@@ -306,27 +305,36 @@ namespace fichePersonnage
             rangeAge.CharacterFormat.FontSize = 24;
             paragraphe = section.AddParagraph();
 
-            TextRange rangeRace = paragraphe.AppendText("Race : " + txtRace.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
-            rangeRace.CharacterFormat.FontSize = 24;
-            paragraphe = section.AddParagraph();
-
-            TextRange rangeClasseMetier = paragraphe.AppendText("Classe : " + txtClasseMetier.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
-            rangeClasseMetier.CharacterFormat.FontSize = 24;
-            paragraphe = section.AddParagraph();
-
+            if(txtAge.Text != string.Empty)
+            {
+                TextRange rangeRace = paragraphe.AppendText("Race : " + txtRace.Text);
+                paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+                rangeRace.CharacterFormat.FontSize = 24;
+                paragraphe = section.AddParagraph();
+            }
+            
+            if(txtClasseMetier.Text != string.Empty)
+            {
+                TextRange rangeClasseMetier = paragraphe.AppendText("Classe : " + txtClasseMetier.Text);
+                paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+                rangeClasseMetier.CharacterFormat.FontSize = 24;
+                paragraphe = section.AddParagraph();
+            }
+            
             DocPicture imageARepositionner = paragraphe.AppendPicture(picture);
             imageARepositionner.TextWrappingStyle = TextWrappingStyle.Square;
             imageARepositionner.HorizontalPosition = 200.0F;
             imageARepositionner.VerticalPosition = -200.0F;
             paragraphe = section.AddParagraph();
 
-            TextRange rangeNiveau = paragraphe.AppendText("Niveau " + txtNiveau.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.Heading5);
-            rangeNiveau.CharacterFormat.FontSize = 28;
-            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Center;
-            paragraphe = section.AddParagraph();
+            if(txtNiveau.Text != string.Empty)
+            {
+                TextRange rangeNiveau = paragraphe.AppendText("Niveau " + txtNiveau.Text);
+                paragraphe.ApplyStyle(BuiltinStyle.Heading5);
+                rangeNiveau.CharacterFormat.FontSize = 28;
+                paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Center;
+                paragraphe = section.AddParagraph();
+            }            
 
             TextRange rangeIntituleHistoire = paragraphe.AppendText("Histoire :");
             paragraphe.ApplyStyle(BuiltinStyle.Heading8);
@@ -376,30 +384,36 @@ namespace fichePersonnage
             paragraphe.Format.AfterSpacing = 30;
             paragraphe = section.AddParagraph();
 
-            TextRange rangeLangue = paragraphe.AppendText("Langue(s) :");
-            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
-            rangeLangue.CharacterFormat.FontSize = 28;
-            rangeLangue.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
-            paragraphe = section.AddParagraph();
+            if(rtbLangue.Text != string.Empty)
+            {
+                TextRange rangeLangue = paragraphe.AppendText("Langue(s) :");
+                paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+                rangeLangue.CharacterFormat.FontSize = 28;
+                rangeLangue.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
+                paragraphe = section.AddParagraph();
 
 
-            TextRange rangeLesLangues = paragraphe.AppendText(rtbLangue.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
-            rangeLesLangues.CharacterFormat.FontSize = 20;
-            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
-            paragraphe = section.AddParagraph();
+                TextRange rangeLesLangues = paragraphe.AppendText(rtbLangue.Text);
+                paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
+                rangeLesLangues.CharacterFormat.FontSize = 20;
+                paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
+                paragraphe = section.AddParagraph();
+            }
+            
+            if(txtCompetences.Text != string.Empty)
+            {
+                TextRange rangeCompetencesTitre = paragraphe.AppendText("Compétences :");
+                paragraphe.ApplyStyle(BuiltinStyle.Heading8);
+                rangeCompetencesTitre.CharacterFormat.FontSize = 28;
+                rangeCompetencesTitre.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
+                paragraphe = section.AddParagraph();
 
-            TextRange rangeCompetencesTitre = paragraphe.AppendText("Compétences :");
-            paragraphe.ApplyStyle(BuiltinStyle.Heading8);
-            rangeCompetencesTitre.CharacterFormat.FontSize = 28;
-            rangeCompetencesTitre.CharacterFormat.UnderlineStyle = UnderlineStyle.Single;
-            paragraphe = section.AddParagraph();
-
-            TextRange rangeLesCompetences = paragraphe.AppendText(txtCompetences.Text);
-            paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
-            rangeLesCompetences.CharacterFormat.FontSize = 20;
-            paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
-
+                TextRange rangeLesCompetences = paragraphe.AppendText(txtCompetences.Text);
+                paragraphe.ApplyStyle(BuiltinStyle.BodyText1I);
+                rangeLesCompetences.CharacterFormat.FontSize = 20;
+                paragraphe.Format.HorizontalAlignment = HorizontalAlignment.Justify;
+            }
+            
             // Enregistrer le fichier doc.  
             document.SaveToFile(cheminSauvegardeDocx, FileFormat.Docx);
             // Convertir en PDF  
@@ -464,7 +478,7 @@ namespace fichePersonnage
 
         private void btnRepartitionPhyMenSoc_Click(object sender, EventArgs e)
         {
-            caracteristiques.RepartitionCaracteristiquePrincipale(txtNbRepartitionPhySocMen, txtPhysique, txtSocial, txtMental);
+            
         }
 
         private void txtRace_TextChanged(object sender, EventArgs e)
@@ -498,6 +512,28 @@ namespace fichePersonnage
         private void btnCompetences_Click(object sender, EventArgs e)
         {
             uneCompetence.TroisCompetencesAleatoire(txtCompetences);
+        }
+
+        private void btnGenererPersonnageAleatoirement_Click(object sender, EventArgs e)
+        {
+            unNom.NomPersonnageAleatoire(txtNom);
+            rdbHomme.Checked = true;
+            unPrenom.PrenomAleatoireGarcon(txtPrenom);
+
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblMental_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            caracteristiques.RepartitionCaracteristiquePrincipale(txtNbRepartitionPhySocMen, txtPhysique, txtSocial, txtMental);
         }
     }
 }

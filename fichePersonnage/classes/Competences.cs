@@ -38,7 +38,7 @@ namespace fichePersonnage
                     }
                 }
 
-                int nbAleatoire = nbRandom.Next(0, (listCompetences.Count));
+                int nbAleatoire = nbRandom.Next(1, (listCompetences.Count));
                 laCompetence = listCompetences[nbAleatoire];
                 listCompetences.Clear();
 

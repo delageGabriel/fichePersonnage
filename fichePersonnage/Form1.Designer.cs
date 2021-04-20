@@ -76,16 +76,14 @@
             this.txtNiveau = new System.Windows.Forms.TextBox();
             this.lblCompetences = new System.Windows.Forms.Label();
             this.txtCompetences = new System.Windows.Forms.TextBox();
-            this.lblDons = new System.Windows.Forms.Label();
-            this.txtDons = new System.Windows.Forms.TextBox();
             this.btnCompetences = new System.Windows.Forms.Button();
-            this.btnDons = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(24, 66);
+            this.txtNom.Location = new System.Drawing.Point(12, 23);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 0;
@@ -94,7 +92,7 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(59, 50);
+            this.lblNom.Location = new System.Drawing.Point(47, 7);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(29, 13);
             this.lblNom.TabIndex = 1;
@@ -102,7 +100,7 @@
             // 
             // btnGenerNom
             // 
-            this.btnGenerNom.Location = new System.Drawing.Point(24, 92);
+            this.btnGenerNom.Location = new System.Drawing.Point(12, 49);
             this.btnGenerNom.Name = "btnGenerNom";
             this.btnGenerNom.Size = new System.Drawing.Size(98, 23);
             this.btnGenerNom.TabIndex = 2;
@@ -112,7 +110,7 @@
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(181, 66);
+            this.txtPrenom.Location = new System.Drawing.Point(131, 23);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 3;
@@ -121,7 +119,7 @@
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(211, 50);
+            this.lblPrenom.Location = new System.Drawing.Point(161, 7);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(43, 13);
             this.lblPrenom.TabIndex = 4;
@@ -130,7 +128,7 @@
             // btnGenerPrenom
             // 
             this.btnGenerPrenom.Enabled = false;
-            this.btnGenerPrenom.Location = new System.Drawing.Point(181, 92);
+            this.btnGenerPrenom.Location = new System.Drawing.Point(131, 49);
             this.btnGenerPrenom.Name = "btnGenerPrenom";
             this.btnGenerPrenom.Size = new System.Drawing.Size(100, 23);
             this.btnGenerPrenom.TabIndex = 5;
@@ -141,7 +139,7 @@
             // rdbHomme
             // 
             this.rdbHomme.AutoSize = true;
-            this.rdbHomme.Location = new System.Drawing.Point(24, 176);
+            this.rdbHomme.Location = new System.Drawing.Point(253, 21);
             this.rdbHomme.Name = "rdbHomme";
             this.rdbHomme.Size = new System.Drawing.Size(61, 17);
             this.rdbHomme.TabIndex = 8;
@@ -153,7 +151,7 @@
             // rdbFemme
             // 
             this.rdbFemme.AutoSize = true;
-            this.rdbFemme.Location = new System.Drawing.Point(24, 210);
+            this.rdbFemme.Location = new System.Drawing.Point(253, 55);
             this.rdbFemme.Name = "rdbFemme";
             this.rdbFemme.Size = new System.Drawing.Size(59, 17);
             this.rdbFemme.TabIndex = 9;
@@ -165,7 +163,7 @@
             // lblSexe
             // 
             this.lblSexe.AutoSize = true;
-            this.lblSexe.Location = new System.Drawing.Point(59, 150);
+            this.lblSexe.Location = new System.Drawing.Point(303, 6);
             this.lblSexe.Name = "lblSexe";
             this.lblSexe.Size = new System.Drawing.Size(31, 13);
             this.lblSexe.TabIndex = 10;
@@ -173,18 +171,21 @@
             // 
             // rtbHistoire
             // 
-            this.rtbHistoire.Location = new System.Drawing.Point(60, 421);
+            this.rtbHistoire.Location = new System.Drawing.Point(25, 190);
             this.rtbHistoire.MaxLength = 500;
             this.rtbHistoire.Name = "rtbHistoire";
-            this.rtbHistoire.Size = new System.Drawing.Size(505, 180);
+            this.rtbHistoire.Size = new System.Drawing.Size(405, 117);
             this.rtbHistoire.TabIndex = 11;
             this.rtbHistoire.Text = "";
             this.rtbHistoire.TextChanged += new System.EventHandler(this.rtbHistoire_TextChanged);
             // 
             // lblHistoire
             // 
+            this.lblHistoire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHistoire.AutoSize = true;
-            this.lblHistoire.Location = new System.Drawing.Point(85, 405);
+            this.lblHistoire.Location = new System.Drawing.Point(22, 170);
             this.lblHistoire.Name = "lblHistoire";
             this.lblHistoire.Size = new System.Drawing.Size(42, 13);
             this.lblHistoire.TabIndex = 12;
@@ -193,7 +194,7 @@
             // 
             // btnGenerHistoire
             // 
-            this.btnGenerHistoire.Location = new System.Drawing.Point(395, 607);
+            this.btnGenerHistoire.Location = new System.Drawing.Point(216, 313);
             this.btnGenerHistoire.Name = "btnGenerHistoire";
             this.btnGenerHistoire.Size = new System.Drawing.Size(159, 23);
             this.btnGenerHistoire.TabIndex = 13;
@@ -204,7 +205,7 @@
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(116, 836);
+            this.lblPhysique.Location = new System.Drawing.Point(358, 343);
             this.lblPhysique.Name = "lblPhysique";
             this.lblPhysique.Size = new System.Drawing.Size(50, 13);
             this.lblPhysique.TabIndex = 16;
@@ -213,7 +214,7 @@
             // lblSocial
             // 
             this.lblSocial.AutoSize = true;
-            this.lblSocial.Location = new System.Drawing.Point(301, 835);
+            this.lblSocial.Location = new System.Drawing.Point(507, 340);
             this.lblSocial.Name = "lblSocial";
             this.lblSocial.Size = new System.Drawing.Size(36, 13);
             this.lblSocial.TabIndex = 17;
@@ -222,15 +223,16 @@
             // lblMental
             // 
             this.lblMental.AutoSize = true;
-            this.lblMental.Location = new System.Drawing.Point(474, 834);
+            this.lblMental.Location = new System.Drawing.Point(649, 341);
             this.lblMental.Name = "lblMental";
             this.lblMental.Size = new System.Drawing.Size(39, 13);
             this.lblMental.TabIndex = 18;
             this.lblMental.Text = "Mental";
+            this.lblMental.Click += new System.EventHandler(this.lblMental_Click);
             // 
             // txtPhysique
             // 
-            this.txtPhysique.Location = new System.Drawing.Point(88, 852);
+            this.txtPhysique.Location = new System.Drawing.Point(330, 359);
             this.txtPhysique.Name = "txtPhysique";
             this.txtPhysique.Size = new System.Drawing.Size(100, 20);
             this.txtPhysique.TabIndex = 19;
@@ -239,7 +241,7 @@
             // 
             // txtSocial
             // 
-            this.txtSocial.Location = new System.Drawing.Point(269, 852);
+            this.txtSocial.Location = new System.Drawing.Point(475, 357);
             this.txtSocial.Name = "txtSocial";
             this.txtSocial.Size = new System.Drawing.Size(100, 20);
             this.txtSocial.TabIndex = 20;
@@ -248,7 +250,7 @@
             // 
             // txtMental
             // 
-            this.txtMental.Location = new System.Drawing.Point(441, 852);
+            this.txtMental.Location = new System.Drawing.Point(621, 359);
             this.txtMental.Name = "txtMental";
             this.txtMental.Size = new System.Drawing.Size(100, 20);
             this.txtMental.TabIndex = 21;
@@ -258,7 +260,7 @@
             // rdbAutre
             // 
             this.rdbAutre.AutoSize = true;
-            this.rdbAutre.Location = new System.Drawing.Point(181, 176);
+            this.rdbAutre.Location = new System.Drawing.Point(330, 21);
             this.rdbAutre.Name = "rdbAutre";
             this.rdbAutre.Size = new System.Drawing.Size(100, 17);
             this.rdbAutre.TabIndex = 22;
@@ -270,7 +272,7 @@
             // txtAutre
             // 
             this.txtAutre.Enabled = false;
-            this.txtAutre.Location = new System.Drawing.Point(181, 207);
+            this.txtAutre.Location = new System.Drawing.Point(330, 52);
             this.txtAutre.Name = "txtAutre";
             this.txtAutre.Size = new System.Drawing.Size(100, 20);
             this.txtAutre.TabIndex = 23;
@@ -278,7 +280,7 @@
             // lblLimiteCaractere
             // 
             this.lblLimiteCaractere.AutoSize = true;
-            this.lblLimiteCaractere.Location = new System.Drawing.Point(81, 607);
+            this.lblLimiteCaractere.Location = new System.Drawing.Point(22, 321);
             this.lblLimiteCaractere.Name = "lblLimiteCaractere";
             this.lblLimiteCaractere.Size = new System.Drawing.Size(125, 13);
             this.lblLimiteCaractere.TabIndex = 43;
@@ -286,9 +288,9 @@
             // 
             // btnSoumettre
             // 
-            this.btnSoumettre.Location = new System.Drawing.Point(687, 191);
+            this.btnSoumettre.Location = new System.Drawing.Point(25, 524);
             this.btnSoumettre.Name = "btnSoumettre";
-            this.btnSoumettre.Size = new System.Drawing.Size(227, 129);
+            this.btnSoumettre.Size = new System.Drawing.Size(737, 25);
             this.btnSoumettre.TabIndex = 50;
             this.btnSoumettre.Text = "Soumettre la fiche";
             this.btnSoumettre.UseVisualStyleBackColor = true;
@@ -300,7 +302,7 @@
             this.pteBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pteBox.ErrorImage = null;
             this.pteBox.InitialImage = null;
-            this.pteBox.Location = new System.Drawing.Point(320, 35);
+            this.pteBox.Location = new System.Drawing.Point(462, 7);
             this.pteBox.Name = "pteBox";
             this.pteBox.Size = new System.Drawing.Size(300, 300);
             this.pteBox.TabIndex = 51;
@@ -309,7 +311,7 @@
             // 
             // btnImporterImage
             // 
-            this.btnImporterImage.Location = new System.Drawing.Point(422, 377);
+            this.btnImporterImage.Location = new System.Drawing.Point(484, 311);
             this.btnImporterImage.Name = "btnImporterImage";
             this.btnImporterImage.Size = new System.Drawing.Size(91, 23);
             this.btnImporterImage.TabIndex = 52;
@@ -319,7 +321,7 @@
             // 
             // txtPV
             // 
-            this.txtPV.Location = new System.Drawing.Point(88, 705);
+            this.txtPV.Location = new System.Drawing.Point(25, 359);
             this.txtPV.Name = "txtPV";
             this.txtPV.Size = new System.Drawing.Size(100, 20);
             this.txtPV.TabIndex = 53;
@@ -329,7 +331,7 @@
             // 
             // txtPM
             // 
-            this.txtPM.Location = new System.Drawing.Point(454, 708);
+            this.txtPM.Location = new System.Drawing.Point(25, 398);
             this.txtPM.Name = "txtPM";
             this.txtPM.Size = new System.Drawing.Size(100, 20);
             this.txtPM.TabIndex = 54;
@@ -337,8 +339,11 @@
             // 
             // lblPV
             // 
+            this.lblPV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPV.AutoSize = true;
-            this.lblPV.Location = new System.Drawing.Point(108, 689);
+            this.lblPV.Location = new System.Drawing.Point(45, 343);
             this.lblPV.Name = "lblPV";
             this.lblPV.Size = new System.Drawing.Size(68, 13);
             this.lblPV.TabIndex = 55;
@@ -347,7 +352,7 @@
             // lblPM
             // 
             this.lblPM.AutoSize = true;
-            this.lblPM.Location = new System.Drawing.Point(460, 689);
+            this.lblPM.Location = new System.Drawing.Point(33, 382);
             this.lblPM.Name = "lblPM";
             this.lblPM.Size = new System.Drawing.Size(81, 13);
             this.lblPM.TabIndex = 56;
@@ -355,8 +360,11 @@
             // 
             // lblPointARepartir
             // 
+            this.lblPointARepartir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPointARepartir.AutoSize = true;
-            this.lblPointARepartir.Location = new System.Drawing.Point(248, 645);
+            this.lblPointARepartir.Location = new System.Drawing.Point(130, 343);
             this.lblPointARepartir.Name = "lblPointARepartir";
             this.lblPointARepartir.Size = new System.Drawing.Size(134, 13);
             this.lblPointARepartir.TabIndex = 57;
@@ -364,9 +372,9 @@
             // 
             // btnRepartition
             // 
-            this.btnRepartition.Location = new System.Drawing.Point(251, 705);
+            this.btnRepartition.Location = new System.Drawing.Point(131, 398);
             this.btnRepartition.Name = "btnRepartition";
-            this.btnRepartition.Size = new System.Drawing.Size(130, 23);
+            this.btnRepartition.Size = new System.Drawing.Size(130, 20);
             this.btnRepartition.TabIndex = 58;
             this.btnRepartition.Text = "Répartition automatique";
             this.btnRepartition.UseVisualStyleBackColor = true;
@@ -374,7 +382,7 @@
             // 
             // txtNnPointRepartir
             // 
-            this.txtNnPointRepartir.Location = new System.Drawing.Point(269, 661);
+            this.txtNnPointRepartir.Location = new System.Drawing.Point(151, 359);
             this.txtNnPointRepartir.Name = "txtNnPointRepartir";
             this.txtNnPointRepartir.Size = new System.Drawing.Size(100, 20);
             this.txtNnPointRepartir.TabIndex = 59;
@@ -384,7 +392,7 @@
             // lblNbRepartitionPhySocMen
             // 
             this.lblNbRepartitionPhySocMen.AutoSize = true;
-            this.lblNbRepartitionPhySocMen.Location = new System.Drawing.Point(165, 772);
+            this.lblNbRepartitionPhySocMen.Location = new System.Drawing.Point(315, 382);
             this.lblNbRepartitionPhySocMen.Name = "lblNbRepartitionPhySocMen";
             this.lblNbRepartitionPhySocMen.Size = new System.Drawing.Size(134, 13);
             this.lblNbRepartitionPhySocMen.TabIndex = 60;
@@ -392,16 +400,19 @@
             // 
             // txtNbRepartitionPhySocMen
             // 
-            this.txtNbRepartitionPhySocMen.Location = new System.Drawing.Point(178, 798);
+            this.txtNbRepartitionPhySocMen.Location = new System.Drawing.Point(330, 399);
             this.txtNbRepartitionPhySocMen.Name = "txtNbRepartitionPhySocMen";
             this.txtNbRepartitionPhySocMen.Size = new System.Drawing.Size(100, 20);
             this.txtNbRepartitionPhySocMen.TabIndex = 61;
             // 
             // btnRepartitionPhyMenSoc
             // 
-            this.btnRepartitionPhyMenSoc.Location = new System.Drawing.Point(357, 796);
+            this.btnRepartitionPhyMenSoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRepartitionPhyMenSoc.Location = new System.Drawing.Point(25, 447);
             this.btnRepartitionPhyMenSoc.Name = "btnRepartitionPhyMenSoc";
-            this.btnRepartitionPhyMenSoc.Size = new System.Drawing.Size(128, 23);
+            this.btnRepartitionPhyMenSoc.Size = new System.Drawing.Size(0, 0);
             this.btnRepartitionPhyMenSoc.TabIndex = 62;
             this.btnRepartitionPhyMenSoc.Text = "Répartition automatique";
             this.btnRepartitionPhyMenSoc.UseVisualStyleBackColor = true;
@@ -409,7 +420,7 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(22, 265);
+            this.txtAge.Location = new System.Drawing.Point(12, 93);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(100, 20);
             this.txtAge.TabIndex = 63;
@@ -417,7 +428,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(57, 249);
+            this.lblAge.Location = new System.Drawing.Point(47, 77);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(26, 13);
             this.lblAge.TabIndex = 64;
@@ -426,7 +437,7 @@
             // lblRace
             // 
             this.lblRace.AutoSize = true;
-            this.lblRace.Location = new System.Drawing.Point(52, 299);
+            this.lblRace.Location = new System.Drawing.Point(161, 77);
             this.lblRace.Name = "lblRace";
             this.lblRace.Size = new System.Drawing.Size(33, 13);
             this.lblRace.TabIndex = 65;
@@ -435,17 +446,16 @@
             // txtRace
             // 
             this.txtRace.AccessibleName = "";
-            this.txtRace.Location = new System.Drawing.Point(22, 315);
+            this.txtRace.Location = new System.Drawing.Point(131, 93);
             this.txtRace.Name = "txtRace";
             this.txtRace.Size = new System.Drawing.Size(100, 20);
             this.txtRace.TabIndex = 66;
-            this.txtRace.Text = "Humain";
             this.txtRace.TextChanged += new System.EventHandler(this.txtRace_TextChanged);
             // 
             // lblFormat
             // 
             this.lblFormat.AutoSize = true;
-            this.lblFormat.Location = new System.Drawing.Point(406, 350);
+            this.lblFormat.Location = new System.Drawing.Point(601, 316);
             this.lblFormat.Name = "lblFormat";
             this.lblFormat.Size = new System.Drawing.Size(132, 13);
             this.lblFormat.TabIndex = 67;
@@ -454,7 +464,7 @@
             // lblClasseMetier
             // 
             this.lblClasseMetier.AutoSize = true;
-            this.lblClasseMetier.Location = new System.Drawing.Point(32, 350);
+            this.lblClasseMetier.Location = new System.Drawing.Point(22, 121);
             this.lblClasseMetier.Name = "lblClasseMetier";
             this.lblClasseMetier.Size = new System.Drawing.Size(72, 13);
             this.lblClasseMetier.TabIndex = 68;
@@ -462,7 +472,7 @@
             // 
             // txtClasseMetier
             // 
-            this.txtClasseMetier.Location = new System.Drawing.Point(22, 366);
+            this.txtClasseMetier.Location = new System.Drawing.Point(12, 137);
             this.txtClasseMetier.Name = "txtClasseMetier";
             this.txtClasseMetier.Size = new System.Drawing.Size(100, 20);
             this.txtClasseMetier.TabIndex = 69;
@@ -470,7 +480,7 @@
             // lblLangues
             // 
             this.lblLangues.AutoSize = true;
-            this.lblLangues.Location = new System.Drawing.Point(289, 892);
+            this.lblLangues.Location = new System.Drawing.Point(355, 431);
             this.lblLangues.Name = "lblLangues";
             this.lblLangues.Size = new System.Drawing.Size(48, 13);
             this.lblLangues.TabIndex = 70;
@@ -478,15 +488,15 @@
             // 
             // rtbLangue
             // 
-            this.rtbLangue.Location = new System.Drawing.Point(62, 909);
+            this.rtbLangue.Location = new System.Drawing.Point(229, 447);
             this.rtbLangue.Name = "rtbLangue";
-            this.rtbLangue.Size = new System.Drawing.Size(503, 59);
+            this.rtbLangue.Size = new System.Drawing.Size(300, 21);
             this.rtbLangue.TabIndex = 71;
             this.rtbLangue.Text = "";
             // 
             // btnGenereLangues
             // 
-            this.btnGenereLangues.Location = new System.Drawing.Point(270, 974);
+            this.btnGenereLangues.Location = new System.Drawing.Point(326, 474);
             this.btnGenereLangues.Name = "btnGenereLangues";
             this.btnGenereLangues.Size = new System.Drawing.Size(99, 23);
             this.btnGenereLangues.TabIndex = 72;
@@ -497,7 +507,7 @@
             // lblNiveau
             // 
             this.lblNiveau.AutoSize = true;
-            this.lblNiveau.Location = new System.Drawing.Point(211, 249);
+            this.lblNiveau.Location = new System.Drawing.Point(161, 121);
             this.lblNiveau.Name = "lblNiveau";
             this.lblNiveau.Size = new System.Drawing.Size(41, 13);
             this.lblNiveau.TabIndex = 73;
@@ -505,7 +515,7 @@
             // 
             // txtNiveau
             // 
-            this.txtNiveau.Location = new System.Drawing.Point(201, 265);
+            this.txtNiveau.Location = new System.Drawing.Point(151, 137);
             this.txtNiveau.Name = "txtNiveau";
             this.txtNiveau.Size = new System.Drawing.Size(53, 20);
             this.txtNiveau.TabIndex = 74;
@@ -514,7 +524,7 @@
             // lblCompetences
             // 
             this.lblCompetences.AutoSize = true;
-            this.lblCompetences.Location = new System.Drawing.Point(671, 50);
+            this.lblCompetences.Location = new System.Drawing.Point(303, 77);
             this.lblCompetences.Name = "lblCompetences";
             this.lblCompetences.Size = new System.Drawing.Size(72, 13);
             this.lblCompetences.TabIndex = 75;
@@ -522,32 +532,15 @@
             // 
             // txtCompetences
             // 
-            this.txtCompetences.Location = new System.Drawing.Point(640, 66);
+            this.txtCompetences.Location = new System.Drawing.Point(276, 93);
             this.txtCompetences.Multiline = true;
             this.txtCompetences.Name = "txtCompetences";
             this.txtCompetences.Size = new System.Drawing.Size(132, 49);
             this.txtCompetences.TabIndex = 76;
             // 
-            // lblDons
-            // 
-            this.lblDons.AutoSize = true;
-            this.lblDons.Location = new System.Drawing.Point(882, 50);
-            this.lblDons.Name = "lblDons";
-            this.lblDons.Size = new System.Drawing.Size(32, 13);
-            this.lblDons.TabIndex = 77;
-            this.lblDons.Text = "Dons";
-            // 
-            // txtDons
-            // 
-            this.txtDons.Location = new System.Drawing.Point(831, 67);
-            this.txtDons.Multiline = true;
-            this.txtDons.Name = "txtDons";
-            this.txtDons.Size = new System.Drawing.Size(129, 48);
-            this.txtDons.TabIndex = 78;
-            // 
             // btnCompetences
             // 
-            this.btnCompetences.Location = new System.Drawing.Point(640, 121);
+            this.btnCompetences.Location = new System.Drawing.Point(276, 148);
             this.btnCompetences.Name = "btnCompetences";
             this.btnCompetences.Size = new System.Drawing.Size(132, 23);
             this.btnCompetences.TabIndex = 79;
@@ -555,24 +548,25 @@
             this.btnCompetences.UseVisualStyleBackColor = true;
             this.btnCompetences.Click += new System.EventHandler(this.btnCompetences_Click);
             // 
-            // btnDons
+            // button1
             // 
-            this.btnDons.Location = new System.Drawing.Point(848, 121);
-            this.btnDons.Name = "btnDons";
-            this.btnDons.Size = new System.Drawing.Size(99, 23);
-            this.btnDons.TabIndex = 80;
-            this.btnDons.Text = "Générer Dons";
-            this.btnDons.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(484, 398);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 21);
+            this.button1.TabIndex = 80;
+            this.button1.Text = "Répartition automatique";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 1061);
-            this.Controls.Add(this.btnDons);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCompetences);
-            this.Controls.Add(this.txtDons);
-            this.Controls.Add(this.lblDons);
             this.Controls.Add(this.txtCompetences);
             this.Controls.Add(this.lblCompetences);
             this.Controls.Add(this.txtNiveau);
@@ -621,9 +615,12 @@
             this.Controls.Add(this.btnGenerNom);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.txtNom);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Fiche Personnage";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pteBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -680,10 +677,8 @@
         private System.Windows.Forms.TextBox txtNiveau;
         private System.Windows.Forms.Label lblCompetences;
         private System.Windows.Forms.TextBox txtCompetences;
-        private System.Windows.Forms.Label lblDons;
-        private System.Windows.Forms.TextBox txtDons;
         private System.Windows.Forms.Button btnCompetences;
-        private System.Windows.Forms.Button btnDons;
+        private System.Windows.Forms.Button button1;
     }
 }
 

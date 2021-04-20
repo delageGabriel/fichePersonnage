@@ -123,7 +123,7 @@ namespace fichePersonnage
                 }
             }
 
-            int nbAleatoire = nbRandom.Next(0, (listPrenom.Count));
+            int nbAleatoire = nbRandom.Next(1, (listPrenom.Count));
             prenomRetourner = listPrenom[nbAleatoire];
             unPrenom.Text = prenomRetourner;
             listPrenom.Clear();
