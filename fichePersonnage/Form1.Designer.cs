@@ -412,7 +412,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRepartitionPhyMenSoc.Location = new System.Drawing.Point(25, 447);
             this.btnRepartitionPhyMenSoc.Name = "btnRepartitionPhyMenSoc";
-            this.btnRepartitionPhyMenSoc.Size = new System.Drawing.Size(0, 0);
+            this.btnRepartitionPhyMenSoc.Size = new System.Drawing.Size(63, 83);
             this.btnRepartitionPhyMenSoc.TabIndex = 62;
             this.btnRepartitionPhyMenSoc.Text = "Répartition automatique";
             this.btnRepartitionPhyMenSoc.UseVisualStyleBackColor = true;
@@ -564,7 +564,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(847, 644);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCompetences);
             this.Controls.Add(this.txtCompetences);
